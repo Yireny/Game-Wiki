@@ -2,7 +2,7 @@
   <div id="app">
     <navbar class="navbar"></navbar>
     <div class="main">
-      <tabbar class="main__tabbar"></tabbar>
+      <!-- <tabbar class="main__tabbar"></tabbar> -->
       <router-view class="main__content"></router-view>
     </div>
   </div>
@@ -10,12 +10,12 @@
 
 <script>
 import Navbar from './components/navbar'
-import Tabbar from './components/tabbar'
+// import Tabbar from './components/tabbar'
 export default {
   name: 'App',
   components: {
     Navbar,
-    Tabbar
+    // Tabbar
   }
 }
 </script>
@@ -32,16 +32,24 @@ export default {
   position: sticky;
   top: 0;
 }
-.main {
-  display: flex;
-  &__tabbar {
-    position: sticky;
-    top: 50px;
-    width: 250px;
-    height: calc(100vh - 50px);
-  }
-  &__content {
-    flex: 1;
+// .main {
+//   display: flex;
+//   &__tabbar {
+//     position: sticky;
+//     top: 50px;
+//     width: 250px;
+//     height: calc(100vh - 50px);
+//   }
+//   &__content {
+//     flex: 1;
+//   }
+// }
+.main{
+  // box-sizing: border-box;
+  // padding:0 50px;
+  &__content{
+    width: 100%;
+    // height: 100%;
   }
 }
 </style>
