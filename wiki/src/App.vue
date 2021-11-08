@@ -11,7 +11,6 @@
 <script>
 import Navbar from './components/navbar'
 import Tabbar from './components/tabbar'
-
 export default {
   name: 'App',
   components: {
@@ -26,16 +25,13 @@ export default {
   margin: 0;
   padding: 0;
 }
-
 #app {
   min-width: 1080px;
 }
-
 .navbar {
   position: sticky;
   top: 0;
 }
-
 .main {
   display: flex;
   &__tabbar {

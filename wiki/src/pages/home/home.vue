@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    111
+    首页
   </div>
 </template>
 
@@ -10,7 +10,7 @@
   }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
 .home{
     background-color: rgb(250, 250, 250);
 }

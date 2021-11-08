@@ -11,7 +11,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .tabbar {
     background-color: rgb(245, 245, 245);
     overflow-y: hidden;
