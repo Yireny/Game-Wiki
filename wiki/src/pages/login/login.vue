@@ -1,13 +1,13 @@
 <template>
   <div class="login">
     <div class="wrap" :style="{'transform':styleObject}">
-      <form class="wrap__interface wrap__login">
+      <form class="wrap__interface wrap__login" action="">
         <div class="wrap__title">欢迎回来</div>
         <input class="wrap__input" type="text" placeholder="用户名">
         <input class="wrap__input" type="password" placeholder="密码">
         <input class="wrap__btn" type="submit" value="登 录">
       </form>
-      <form class="wrap__interface wrap__register">
+      <form class="wrap__interface wrap__register" action="">
         <div class="wrap__title">加入我们</div>
         <input class="wrap__input" type="text" placeholder="用户名">
         <input class="wrap__input" type="password" placeholder="密码">
@@ -28,7 +28,6 @@
     data() {
       return {
         deg:0,
-        isRegister:true
       }
     },
     computed: {
@@ -50,20 +49,16 @@
 
 <style lang='scss' scoped>
 .login{
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 50px);
-  background: linear-gradient(90deg, #BFFEBE, #F6F8B5, #fcd0b3, #bfb6f8, #e8d8b3);
-  background-size: 500% 500%;
-  animation: gradual 20s ease infinite;
-  -webkit-animation: gradual 20s ease infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: calc(100vh - 70px);
+  min-height: 600px;
   perspective: 800px;
 }
 .wrap{
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  margin-left: -200px;
+  position: relative;
   box-sizing: border-box;
   width: 400px;
   height: 400px;
@@ -74,7 +69,6 @@
   transform-style: preserve-3d;
   &__title{
     height: 60px;
-    // text-align: center;
     font-size: 25px;
     font-weight: 600;
   }
@@ -122,12 +116,8 @@
 }
 
 .switch{
-  position: absolute;
-  top: 600px;
-  left: 50%;
   width: 400px;
   height: 150px;
-  transform: translateX(-50%);
   border-radius: 10px;
   background-color: rgb(252, 252, 249);
   display: flex;
@@ -155,25 +145,4 @@
   }
 }
 
-@keyframes gradual {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      25% {
-        background-position: 50% 0%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      75% {
-        background-position: 50% 100%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
-    }
 </style>

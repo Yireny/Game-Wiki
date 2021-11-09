@@ -20,13 +20,14 @@ export default {
 
 <style lang='scss' scoped>
 .navbar {
-  background-color: rgb(46, 81, 163);
+  background-color: rgb(255, 255, 255);
   height: 50px;
   display: flex;
   justify-content: space-between;
   font-size: 20px;
   line-height: 50px;
   text-align: center;
+  z-index: 10;
   &__title{
     width: 200px;
   }
