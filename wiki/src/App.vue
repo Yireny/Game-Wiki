@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <navbar class="navbar"></navbar>
-    <router-view class="content"></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view class="content"></router-view>
+    </transition>
   </div>
 </template>
 
@@ -18,11 +20,11 @@ export default {
 </script>
 
 <style lang='scss'>
-* {
-  margin: 0;
-  padding: 0;
-}
+  body::-webkit-scrollbar{
+    display: none;
+  }
 #app {
+  position: relative;
   min-width: 1080px;
   min-height: 100vh;
   background: linear-gradient(90deg, #BFFEBE, #F6F8B5, #fcd0b3, #bfb6f8, #e8d8b3);
@@ -62,5 +64,14 @@ export default {
   100% {
     background-position: 0% 50%;
   }
+}
+
+.fade-enter,
+.fade-leave-to{
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active{
+  transition: opacity 0.5s ease;
 }
 </style>

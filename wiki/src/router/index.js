@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 
 const Home=()=>import('../pages/home/home.vue')
 const Login=()=>import('../pages/login/login.vue')
+const Profile=()=>import('../pages/profile/profile.vue')
+const Data=()=>import('../pages/data/data.vue')
+const Community=()=>import('../pages/community/community.vue')
 
 Vue.use(VueRouter)
 
@@ -18,6 +21,18 @@ const routes=[
   {
     path:'/login',
     component:Login
+  },
+  {
+    path:'/profile',
+    component:Profile
+  },
+  {
+    path:'/community',
+    component:Community
+  },
+  {
+    path:'/data',
+    component:Data
   }
 ]
 
