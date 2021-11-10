@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
 
   </div>
 </template>
@@ -11,5 +11,9 @@
 </script>
 
 <style scoped>
-
+.main{
+  height: 1000px;
+  background-color: rgb(250, 250, 250);
+  border-radius: 10px;
+}
 </style>
