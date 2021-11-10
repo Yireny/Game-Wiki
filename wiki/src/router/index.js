@@ -2,10 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 const Home=()=>import('../pages/home/home.vue')
+const Encyclopedia=()=>import('../pages/encyclopedia/encyclopedia.vue')
+const Strategy=()=>import('../pages/strategy/strategy.vue')
+const Community=()=>import('../pages/community/community.vue')
 const Login=()=>import('../pages/login/login.vue')
 const Profile=()=>import('../pages/profile/profile.vue')
-const Data=()=>import('../pages/data/data.vue')
-const Community=()=>import('../pages/community/community.vue')
 
 Vue.use(VueRouter)
 
@@ -19,20 +20,24 @@ const routes=[
     component:Home
   },
   {
-    path:'/login',
-    component:Login
+    path:'/encyclopedia',
+    component:Encyclopedia
   },
   {
-    path:'/profile',
-    component:Profile
+    path:'/strategy',
+    component:Strategy
   },
   {
     path:'/community',
     component:Community
   },
   {
-    path:'/data',
-    component:Data
+    path:'/login',
+    component:Login
+  },
+  {
+    path:'/profile',
+    component:Profile
   }
 ]
 

@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name:'Data'
+    name:'Encyclopedia'
   }
 </script>
 

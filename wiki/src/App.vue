@@ -1,33 +1,38 @@
 <template>
   <div id="app">
     <navbar class="navbar"></navbar>
-    <transition name="fade" mode="out-in">
-      <router-view class="content"></router-view>
-    </transition>
+    <div class="content">
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
+    </div>
+    <div class="footer">
+      <statement></statement>
+    </div>
   </div>
 </template>
 
 <script>
 import Navbar from './components/navbar'
+import Statement from './components/statement'
 // import Tabbar from './components/tabbar'
 export default {
   name: 'App',
   components: {
     Navbar,
+    Statement
     // Tabbar
   }
 }
 </script>
 
 <style lang='scss'>
-  body::-webkit-scrollbar{
-    display: none;
-  }
 #app {
   position: relative;
-  min-width: 1080px;
-  min-height: 100vh;
-  background: linear-gradient(90deg, #BFFEBE, #F6F8B5, #fcd0b3, #bfb6f8, #e8d8b3);
+  width: 100%;
+  min-width: 1200px;
+  background: linear-gradient(90deg, #c1ece7, #e9ebb6, #e9cbb7, #d2cbf8, #ebdec1);
+  // background-size: 100% 100%;
   background-size: 500% 500%;
   animation: gradual 20s ease infinite;
   -webkit-animation: gradual 20s ease infinite;
@@ -39,8 +44,14 @@ export default {
 }
 
 .content{
-  width: 1080px;
-  margin: 5px auto;
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+.footer{
+  width: 100%;
+  padding: 30px 100px;
   box-sizing: border-box;
 }
 

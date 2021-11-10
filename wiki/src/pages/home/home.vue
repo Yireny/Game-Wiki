@@ -1,6 +1,11 @@
 <template>
   <div class="home">
-    首页
+    <div class="home__content">
+      <div class="home__swiper">
+      </div>
+      <div class="home__information"></div>
+    </div>
+    <div class="home__aside"></div>
   </div>
 </template>
 
@@ -12,7 +17,21 @@
 
 <style lang='scss' scoped>
 .home{
-    background-color: rgb(250, 250, 250);
     border-radius: 5px;
+    display: flex;
+    &__content{
+      width: 700px;
+      height: 1000px;
+      background-color: rgb(250, 250, 250);
+      border-radius: 10px;
+      opacity: .5;
+    }
+    &__aside{
+      width: 280px;
+      margin: 0 auto; 
+      background-color: rgb(250, 250, 250);
+      border-radius: 10px;
+      opacity: .5;
+    }
 }
 </style>
