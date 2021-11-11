@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="navbar__inner">
       <div class="navbar__logo"></div>
-      <div class="navbar__title" @click="setPath(spe[0])">Arknights·明日方舟</div>
+      <div class="navbar__title" @click="setPath(navItemsAside[0])">Arknights·明日方舟</div>
       <div class="navbar__wrap">
         <span
         class="navbar__item"
@@ -11,10 +11,17 @@
         v-for="item in navItems"
         :key="item.id"
         >
-        {{item.content}}
+          {{item.content}}
         </span>
       </div>
-      <div class="navbar__login" @click="setPath(spe[1])">登录</div>
+      <div class="navbar__aside">
+        <div class="navbar__item">消息</div>
+        <div class="navbar__login" :class="{'navbar__login--active': currentID===5}" @click="setPath(navItemsAside[1])">
+          <div class="navbar__frame">
+            <img src="../assets/images/avatar1.png" alt="">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -48,8 +55,8 @@ export default {
           content:'社区'
         }
       ],
-      //特殊路由跳转
-      spe:[
+      //两侧路由跳转
+      navItemsAside:[
         {
           id:1,
           path:'/home',
@@ -57,8 +64,13 @@ export default {
         },
         {
           id:5,
-          path:'/login',
-          content:'登录'
+          path:'/profile',
+          content:'用户'
+        },
+        {
+          id:6,
+          path:'/community',
+          content:'消息'
         }
       ]
     }
@@ -93,7 +105,8 @@ export default {
     line-height: 60px;
     margin: 0 auto;
     display: flex;
-  }&__logo{
+  }
+  &__logo{
     width: 90px;
     cursor: pointer;
   }
@@ -132,14 +145,37 @@ export default {
       background-color: rgb(46, 206, 255);
     }
   }
-  &__login{
+  &__aside{
     position: absolute;
     top: 0;
     right: 0;
-    width: 60px;
-    height: 60px;
-    font-size: 14px;
+    display: flex;
     cursor: pointer;
+  }
+  &__login{
+    width: 76px;
+    height: 60px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    &--active{
+      font-weight: 600px;
+      background-color: rgb(46, 206, 255);
+    }
+    &:hover{
+      background-color: rgb(46, 206, 255);
+    }
+  }
+  &__frame{
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: #fff;
+    & img{
+      width: 100%;
+      height: 100%;
+      vertical-align: top;
+      border-radius: 100%;
+    }
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-
+    <div></div>
   </div>
 </template>
 
@@ -13,7 +13,7 @@
 <style scoped>
 .main{
   height: 1000px;
-  background-color: rgb(250, 250, 250);
+  background-color: rgba(250, 250, 250,.7);
   border-radius: 10px;
 }
 </style>
