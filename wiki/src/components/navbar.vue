@@ -1,7 +1,9 @@
 <template>
   <div class="navbar">
     <div class="navbar__inner">
-      <div class="navbar__logo"></div>
+      <div class="navbar__logo" @click="setPath(navItemsAside[0])">
+        <img src="../assets/images/logo.png" alt="">
+      </div>
       <div class="navbar__title" @click="setPath(navItemsAside[0])">Arknights·明日方舟</div>
       <div class="navbar__wrap">
         <span
@@ -109,6 +111,12 @@ export default {
   &__logo{
     width: 90px;
     cursor: pointer;
+    box-sizing: border-box;
+    padding: 0 15px;
+    & img{
+      width: 76px;
+      vertical-align: middle;
+    }
   }
   &__title{
     position: relative;
