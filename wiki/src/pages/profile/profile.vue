@@ -1,5 +1,9 @@
 <template>
   <div class="main">
+    <div class="personal">
+      
+    </div>
+    <div class="record"></div>
   </div>
 </template>
 
