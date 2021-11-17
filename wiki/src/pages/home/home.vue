@@ -2,7 +2,7 @@
   <div class="main">
     <div class="content">
       <div class="content__swiper">
-        轮播图
+        <swiper></swiper>
       </div>
       <div class="content__information">
         资讯
@@ -15,8 +15,12 @@
 </template>
 
 <script>
+  import Swiper from '../../components/swiper'
   export default {
-    name:'Home'
+    name:'Home',
+    components: {
+      Swiper
+    }
   }
 </script>
 
@@ -28,25 +32,25 @@
 .content{
   width: 700px;
   height: 1000px;
-  background-color: rgba(250, 250, 250,.5);
-  border-radius: 10px;
   &__swiper{
     width: 700px;
     height: 284px;
-    background-color: rgb(250, 200, 200);
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 10px;
     margin-bottom: 30px;
     box-sizing: border-box;
   }
   &__information{
     width: 100%;
     height: 500px;
-    background-color: rgb(200, 240, 240);
+    background-color: rgba(255, 255, 255,.7);
+    border-radius: 10px;
   }
 }
 .aside{
   width: 280px;
-  margin: 0 auto; 
-  background-color: rgba(250, 250, 250,.5);
+  // margin: 0 auto;
+  background-color: rgba(255, 255, 255,.7);
   border-radius: 10px;
 }
 </style>

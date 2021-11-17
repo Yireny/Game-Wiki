@@ -20,7 +20,7 @@
         <div class="navbar__item">消息</div>
         <div class="navbar__login" :class="{'navbar__login--active': currentID===5}" @click="setPath(navItemsAside[1])">
           <div class="navbar__frame">
-            <img src="../assets/images/avatar1.png" alt="">
+            <img src="../assets/images/头像_早露_skin1.png" alt="">
           </div>
         </div>
       </div>
