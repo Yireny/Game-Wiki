@@ -14,6 +14,13 @@
       >
         <img src="../assets/images/干员轮换卡池67.jpg" alt="">
       </swiper-slide>
+      <swiper-slide
+      class="swiper-slide"
+      >
+        <img src="../assets/images/活动预告_感谢庆典2021_02.jpg" alt="">
+      </swiper-slide>
+      
+
     </swiper>
   </div>
 </template>
@@ -32,44 +39,22 @@ import "swiper/dist/css/swiper.css";
       return {
         swiperOption:{
           effect: 'coverflow',
-          grabCursor: true,
           centeredSlides: true,
           slidesPerView: 'auto',
           loop: true,
-          // autoplay: 1000,
-          // autoplayDisableOnInteraction: false,
           autoplay:{
-            delay:1000,
-            DisableOnInteraction: false,
+            delay:2000,
+            disableOnInteraction: false,
           },
           speed: 1000,
-          // coverflow: {
-          //   rotate: 0,
-          //   stretch: 200,
-          //   depth: 200,
-          //   modifier: 1,
-          //   slideShadows: true
-          // }
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 210,
+            depth: 200,
+            modifier: 1,
+            slideShadows: false
+          }
         }
-        //分割
-        // swiperOption: {
-        //   effect: 'coverflow',
-        //   centeredSlides: true,
-        //   loop: true,
-        //   autoplay: {
-        //     delay: 3000,
-        //     disableOnInteraction: false //用户操作之后是否停止自动轮播默认true
-        //   },
-        //   observer: true,
-        //   observerParents: true,
-        //   pagination: {
-        //     el: ".swiper-pagination",
-        //     type: "custom",
-        //     renderCustom: function(swiper, current, total) {
-        //       return current + "/" + total;
-        //     }
-        //   }
-        // },
       }
     }
   }
@@ -81,8 +66,11 @@ import "swiper/dist/css/swiper.css";
   height: 250px;
   cursor: default;
   .swiper-slide{
+    display: flex;
+    align-items: center;
     width: 412px;
     height: 225px;
+    border-radius: 5px;
     & img{
       width: 412px;
       height: auto;

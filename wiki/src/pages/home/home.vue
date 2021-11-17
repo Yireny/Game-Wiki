@@ -5,7 +5,10 @@
         <swiper></swiper>
       </div>
       <div class="content__information">
-        资讯
+        <post-item></post-item>
+        <post-item></post-item>
+        <post-item></post-item>
+        <post-item></post-item>
       </div>
     </div>
     <div class="aside">
@@ -16,10 +19,13 @@
 
 <script>
   import Swiper from '../../components/swiper'
+  import PostItem from './components/postItem'
+
   export default {
     name:'Home',
     components: {
-      Swiper
+      Swiper,
+      PostItem
     }
   }
 </script>
@@ -31,14 +37,12 @@
 }
 .content{
   width: 700px;
-  height: 1000px;
   &__swiper{
     width: 700px;
     height: 250px;
   }
   &__information{
     width: 100%;
-    height: 500px;
     background-color: rgba(255, 255, 255,.7);
     border-radius: 10px;
   }
