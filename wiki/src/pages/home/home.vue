@@ -34,11 +34,7 @@
   height: 1000px;
   &__swiper{
     width: 700px;
-    height: 284px;
-    background-color: rgba(255, 255, 255, .7);
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-sizing: border-box;
+    height: 250px;
   }
   &__information{
     width: 100%;
