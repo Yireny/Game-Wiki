@@ -5,10 +5,10 @@
         <swiper></swiper>
       </div>
       <div class="content__information">
-        <post-item></post-item>
-        <!-- <post-item></post-item>
-        <post-item></post-item>
-        <post-item></post-item> -->
+        <card></card>
+        <card></card>
+        <card></card>
+        <card></card>
       </div>
     </div>
     <div class="aside">
@@ -19,13 +19,13 @@
 
 <script>
   import Swiper from '../../components/swiper'
-  import PostItem from './components/postItem'
+  import Card from './components/card'
 
   export default {
     name:'Home',
     components: {
       Swiper,
-      PostItem
+      Card
     }
   }
 </script>

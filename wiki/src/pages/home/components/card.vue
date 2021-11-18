@@ -10,19 +10,21 @@
     <div class="content">
       <div class="content__title">【公告】活动标题</div>
       <div class="content__content">内容内容内容内容内容内容</div>
-      <div class="content__img"></div>
+      <div class="content__img">
+        <img src="../../../assets/images/干员轮换卡池67.jpg" alt="">
+      </div>
     </div>
     <div class="browse">
       <div class="browse__item">
-        <span class="browse__icon browse__icon-views"></span>
+        <span class="iconfont">&#xe622;</span>
         <span class="browse__text">10000</span>
       </div>
       <div class="browse__item">
-        <span class="browse__icon browse__icon-comments"></span>
+        <span class="iconfont">&#xe600;</span>
         <span class="browse__text">197</span>
       </div>
       <div class="browse__item">
-        <span class="browse__icon browse__icon-like"></span>
+        <span class="iconfont">&#xec7f;</span>
         <span class="browse__text">3100</span>
       </div>
     </div>
@@ -31,7 +33,7 @@
 
 <script>
   export default {
-    name:'postItem',
+    name:'card',
   }
 </script>
 
@@ -40,7 +42,11 @@
   width: 700px;
   height: 300px;
   padding: 24px 30px;
+  border-bottom: 1px solid #ccc;
   box-sizing: border-box;
+  &:last-child{
+    border-bottom: none;
+  }
 }
 .user{
   display: flex;
@@ -87,12 +93,15 @@
     display: flex;
     width: 100%;
     line-height: 18px;
-    margin-top: 8px;
+    margin: 8px 0;
   }
   &__img{
     display: flex;
     width: 120px;
     height: 120px;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 5px;
   }
 }
 .browse{
@@ -100,33 +109,17 @@
   width: 640px;
   height: 24px;
   justify-content: right;
-  // margin-top: 7px;
+  margin-top: 7px;
   &__item{
     width: 75px;
     height: 24px;
-  }
-  &__icon{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    &-views{
-      background: url('../../../assets/images/views.png');
-      background-size: 100% 100%;
-    }
-    &-comments{
-      background: url('../../../assets/images/comments.png');
-      background-size: 100% 100%;
-    }
-    &-like{
-      background: url('../../../assets/images/like.png');
-      background-size: 100% 100%;
+    .iconfont{
+      color: #ccc;
     }
   }
   &__text{
     display: inline-block;
     margin-left: 5px;
-    text-align: center;
-    line-height: 24px;
     font-size: 14px;
     color: #ccc;
   }

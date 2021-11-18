@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="swiper">
     <swiper
     :options='swiperOption'
     class="swiper-container"
@@ -17,11 +17,17 @@
       <swiper-slide
       class="swiper-slide"
       >
-        <img src="../assets/images/活动预告_感谢庆典2021_02.jpg" alt="">
+        <img src="../assets/images/干员轮换卡池67.jpg" alt="">
       </swiper-slide>
       
 
     </swiper>
+    <div class="swiper-button swiper-button-prev">
+      <span class="iconfont">&#xe710;</span>
+    </div>
+    <div class="swiper-button swiper-button-next">
+      <span class="iconfont">&#xe715;</span>
+    </div>
   </div>
 </template>
 
@@ -53,7 +59,11 @@ import "swiper/dist/css/swiper.css";
             depth: 200,
             modifier: 1,
             slideShadows: false
-          }
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
         }
       }
     }
@@ -61,6 +71,9 @@ import "swiper/dist/css/swiper.css";
 </script>
 
 <style lang='scss' scoped>
+.swiper{
+  position: relative;
+}
 .swiper-container{
   width: 700px;
   height: 250px;
@@ -77,5 +90,26 @@ import "swiper/dist/css/swiper.css";
       border-radius: 5px;
     }
   }
+}
+.swiper-button{
+  position: absolute;
+  top: 100px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 100%;
+  background-image: none;
+  &-prev{
+    transform: translateX(100px);
+  }
+  &-next{
+    transform: translateX(-100px);
+  }
+}
+.iconfont{
+  color: #fff;
 }
 </style>

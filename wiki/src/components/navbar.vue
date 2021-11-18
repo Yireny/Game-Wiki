@@ -99,7 +99,7 @@ export default {
   font-size: 0;
   color: rgb(253, 255, 255);
   background-color: rgb(0, 195, 255);
-  z-index: 10;
+  z-index: 99;
   &__inner{
     position: relative;
     width: 1200px;
