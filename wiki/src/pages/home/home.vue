@@ -6,9 +6,9 @@
       </div>
       <div class="content__information">
         <post-item></post-item>
+        <!-- <post-item></post-item>
         <post-item></post-item>
-        <post-item></post-item>
-        <post-item></post-item>
+        <post-item></post-item> -->
       </div>
     </div>
     <div class="aside">
