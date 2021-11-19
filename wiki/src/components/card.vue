@@ -2,7 +2,7 @@
   <div class="card">
     <div class="user">
       <div class="user__frame">
-        <img src="../../../assets/images/头像_早露_skin1.png" alt="">
+        <img src="../assets/images/头像_早露_skin1.png" alt="">
       </div>
       <div class="user__id">玩家id</div>
       <div class="user__push-time">20小时前</div>
@@ -11,7 +11,7 @@
       <div class="content__title">【公告】活动标题</div>
       <div class="content__content">内容内容内容内容内容内容</div>
       <div class="content__img">
-        <img src="../../../assets/images/干员轮换卡池67.jpg" alt="">
+        <img src="../assets/images/干员轮换卡池67.jpg" alt="">
       </div>
     </div>
     <div class="browse">

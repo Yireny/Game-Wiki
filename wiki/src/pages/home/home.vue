@@ -19,7 +19,7 @@
 
 <script>
   import Swiper from '../../components/swiper'
-  import Card from './components/card'
+  import Card from '../../components/card'
   import Information from './components/information'
 
   export default {
