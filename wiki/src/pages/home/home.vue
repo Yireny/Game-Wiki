@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="aside">
-      banner
+      <information></information>
     </div>
   </div>
 </template>
@@ -20,12 +20,14 @@
 <script>
   import Swiper from '../../components/swiper'
   import Card from './components/card'
+  import Information from './components/information'
 
   export default {
     name:'Home',
     components: {
       Swiper,
-      Card
+      Card,
+      Information
     }
   }
 </script>
@@ -49,8 +51,5 @@
 }
 .aside{
   width: 280px;
-  // margin: 0 auto;
-  background-color: rgba(255, 255, 255,.7);
-  border-radius: 10px;
 }
 </style>
