@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import Navbar from './components/navbar'
-import Statement from './components/statement'
+import Navbar from '@/components/navbar'
+import Statement from '@/components/statement'
 // import Tabbar from './components/tabbar'
 export default {
   name: 'App',

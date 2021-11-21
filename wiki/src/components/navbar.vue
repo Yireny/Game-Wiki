@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="navbar__inner">
       <div class="navbar__logo" @click="setPath(navItemsAside[0])">
-        <img src="../assets/images/logo.png" alt="">
+        <img src="@/assets/images/logo.png" alt="">
       </div>
       <div class="navbar__title" @click="setPath(navItemsAside[0])">Arknights·明日方舟</div>
       <div class="navbar__wrap">
@@ -20,7 +20,7 @@
         <div class="navbar__item">消息</div>
         <div class="navbar__login" :class="{'navbar__login--active': currentID===5}" @click="setPath(navItemsAside[1])">
           <div class="navbar__frame">
-            <img src="../assets/images/头像_早露_skin1.png" alt="">
+            <img src="@/assets/images/头像_早露_skin1.png" alt="">
           </div>
         </div>
       </div>
@@ -104,9 +104,10 @@ export default {
     position: relative;
     width: 1200px;
     height: 60px;
-    line-height: 60px;
+    // line-height: 60px;
     margin: 0 auto;
     display: flex;
+    align-items: center;
   }
   &__logo{
     width: 90px;
@@ -142,6 +143,8 @@ export default {
     display: inline-block;
     width: 68px;
     height: 60px;
+    padding: 20px 0;
+    box-sizing: border-box;
     font-size: 14px;
     text-align: center;
     cursor: pointer;

@@ -41,6 +41,12 @@ import "swiper/dist/css/swiper.css";
       swiper,
       swiperSlide
     },
+    props: {
+      type:Object,
+      default(){
+        return {}
+      }
+    },
     data () {
       return {
         swiperOption:{

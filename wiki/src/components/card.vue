@@ -2,30 +2,32 @@
   <div class="card">
     <div class="user">
       <div class="user__frame">
-        <img src="../assets/images/头像_早露_skin1.png" alt="">
+        <img :src="post.frame" alt="">
       </div>
-      <div class="user__id">玩家id</div>
-      <div class="user__push-time">20小时前</div>
+      <div class="user__name">{{post.name}}</div>
+      <div class="user__push-time">{{post.time}}</div>
     </div>
     <div class="content">
-      <div class="content__title">【公告】活动标题</div>
-      <div class="content__content">内容内容内容内容内容内容</div>
+      <div class="content__title">{{post.title}}</div>
+      <div class="content__content">{{post.content}}</div>
       <div class="content__img">
-        <img src="../assets/images/干员轮换卡池67.jpg" alt="">
+        <img v-if="post.img1" :src="post.img1" alt="">
+        <img v-if="post.img2" :src="post.img2" alt="">
+        <img v-if="post.img3" :src="post.img3" alt="">
       </div>
     </div>
     <div class="browse">
       <div class="browse__item">
         <span class="iconfont">&#xe622;</span>
-        <span class="browse__text">10000</span>
+        <span class="browse__text">{{post.views}}</span>
       </div>
       <div class="browse__item">
         <span class="iconfont">&#xe600;</span>
-        <span class="browse__text">197</span>
+        <span class="browse__text">{{post.comments}}</span>
       </div>
       <div class="browse__item">
         <span class="iconfont">&#xec7f;</span>
-        <span class="browse__text">3100</span>
+        <span class="browse__text">{{post.like}}</span>
       </div>
     </div>
   </div>
@@ -34,6 +36,14 @@
 <script>
   export default {
     name:'card',
+    props: {
+      post:{
+        type:Object,
+        default(){
+          return {}
+        }
+      }
+    },
   }
 </script>
 
@@ -65,7 +75,7 @@
       border-radius: 100%;
     }
   }
-  &__id{
+  &__name{
     padding: 0 10px;
     line-height: 24px;
     font-size: 14px;
@@ -97,11 +107,13 @@
   }
   &__img{
     display: flex;
-    width: 120px;
-    height: 120px;
-    justify-content: center;
     overflow: hidden;
-    border-radius: 5px;
+    & img{
+      width: 120px;
+      height: 120px;
+      justify-content: center;
+      border-radius: 5px;
+    }
   }
 }
 .browse{
