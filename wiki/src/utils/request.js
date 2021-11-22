@@ -2,33 +2,32 @@ import axios from 'axios';
 
 //axios实例
 const service =axios.create({
-  baseURL:'/',
+  baseURL:'http://api',
   timeout:5000
 })
 
-
-//axios请求拦截器
+//请求拦截
 service.interceptors.request.use(
   config=>{
-    config.data=JSON.stringify(config.data)
-    config.headers={
-
-    }
     return config
   },
-  err=>{
-    console.log(err)
+  err =>{
+    return Promise.reject(err)
   }
 )
 
-//axios响应拦截器
+//响应拦截
 service.interceptors.response.use(
-  response => {
+  response =>{
     return response
   },
-  error => {
-    console.log('请求错误',error)
+  err =>{
+    return Promise.reject(err)
   }
 )
 
-export default service
+export function get(url,params){
+  return service.get(url,{
+    params
+  })
+}

@@ -3,7 +3,7 @@
     <div class="wrap" :style="{'transform':styleObject}">
       <form class="wrap__interface wrap__login" action="">
         <div class="wrap__title">欢迎回来</div>
-        <input class="wrap__input" type="text" placeholder="用户名">
+        <input class="wrap__input" type="text" placeholder="用户名/ID">
         <input class="wrap__input" type="password" placeholder="密码">
         <input class="wrap__btn" type="submit" value="登 录">
       </form>

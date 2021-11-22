@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "mockjs": "^1.1.0",
     "node-sass": "npm:dart-sass@^1.25.0",
     "normalize.css": "^8.0.1",
     "postcss-pxtorem": "^5.1.1",

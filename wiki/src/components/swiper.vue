@@ -1,26 +1,16 @@
 <template>
-  <div class="swiper">
+  <div class="swiper" v-if=slide.length>
     <swiper
     :options='swiperOption'
     class="swiper-container"
     >
       <swiper-slide
       class="swiper-slide"
+      v-for="(item,index) in slide"
+      :key="index"
       >
-        <img src="../assets/images/联合行动05.jpg" alt="">
+        <img :src="item" alt="">
       </swiper-slide>
-      <swiper-slide
-      class="swiper-slide"
-      >
-        <img src="../assets/images/干员轮换卡池67.jpg" alt="">
-      </swiper-slide>
-      <swiper-slide
-      class="swiper-slide"
-      >
-        <img src="../assets/images/干员轮换卡池67.jpg" alt="">
-      </swiper-slide>
-      
-
     </swiper>
     <div class="swiper-button swiper-button-prev">
       <span class="iconfont">&#xe710;</span>
@@ -32,8 +22,8 @@
 </template>
 
 <script>
-import { swiper, swiperSlide } from "vue-awesome-swiper";
-import "swiper/dist/css/swiper.css";
+  import { swiper, swiperSlide } from "vue-awesome-swiper";
+  import "swiper/dist/css/swiper.css";
 
   export default {
     name:'Swiper',
@@ -42,9 +32,11 @@ import "swiper/dist/css/swiper.css";
       swiperSlide
     },
     props: {
-      type:Object,
-      default(){
-        return {}
+      slide:{
+        type:Array,
+        default(){
+          return []
+        }
       }
     },
     data () {
@@ -69,7 +61,7 @@ import "swiper/dist/css/swiper.css";
           navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
-          },
+          }
         }
       }
     }
@@ -83,10 +75,7 @@ import "swiper/dist/css/swiper.css";
 .swiper-container{
   width: 700px;
   height: 250px;
-  cursor: default;
   .swiper-slide{
-    display: flex;
-    align-items: center;
     width: 412px;
     height: 225px;
     border-radius: 5px;

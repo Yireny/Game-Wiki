@@ -15,13 +15,11 @@
 <script>
 import Navbar from '@/components/navbar'
 import Statement from '@/components/statement'
-// import Tabbar from './components/tabbar'
 export default {
   name: 'App',
   components: {
     Navbar,
     Statement
-    // Tabbar
   }
 }
 </script>

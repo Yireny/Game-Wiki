@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import 'normalize.css/normalize.css'
 import './assets/iconfont/iconfont.css'
+require('../mock/index')
 
 Vue.config.productionTip = false
 

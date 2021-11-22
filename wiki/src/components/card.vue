@@ -10,7 +10,7 @@
     <div class="content">
       <div class="content__title">{{post.title}}</div>
       <div class="content__content">{{post.content}}</div>
-      <div class="content__img">
+     <div class="content__img">
         <img v-if="post.img1" :src="post.img1" alt="">
         <img v-if="post.img2" :src="post.img2" alt="">
         <img v-if="post.img3" :src="post.img3" alt="">
@@ -100,9 +100,13 @@
     text-overflow: ellipsis;
   }
   &__content{
-    display: flex;
-    width: 100%;
+    width: 640px;
+    font-size: 14px;
+    color: #999;
     line-height: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin: 8px 0;
   }
   &__img{
@@ -113,6 +117,7 @@
       height: 120px;
       justify-content: center;
       border-radius: 5px;
+      margin-right: 5px;
     }
   }
 }
