@@ -1,17 +1,22 @@
 <template>
   <div class="profile">
     <personal-data></personal-data>
-    <div class="record"></div>
+    <div class="record">
+      <card></card>
+      <card></card>
+    </div>
   </div>
 </template>
 
 <script>
+import Card from '../../components/card.vue'
 import PersonalData from './components/personalData'
 
   export default {
     name:'Profile',
     components: {
-      PersonalData
+      PersonalData,
+      Card
     }
   }
 </script>

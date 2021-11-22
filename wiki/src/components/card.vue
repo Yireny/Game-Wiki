@@ -49,7 +49,8 @@
 
 <style lang='scss' scoped>
 .card{
-  width: 700px;
+  // width: 700px;
+  width: 100%;
   height: 300px;
   padding: 24px 30px;
   border-bottom: 1px solid #ccc;
@@ -60,7 +61,8 @@
 }
 .user{
   display: flex;
-  width: 640px;
+  // width: 640px;
+  width: 100%;
   height: 24px;
   margin-bottom: 15px;
   &__frame{
@@ -88,7 +90,8 @@
   }
 }
 .content{
-  width: 640px;
+  // width: 640px;
+  width: 100%;
   height: 176px;
   &__title{
     display: flex;
@@ -100,7 +103,8 @@
     text-overflow: ellipsis;
   }
   &__content{
-    width: 640px;
+    // width: 640px;
+    width: 100%;
     font-size: 14px;
     color: #999;
     line-height: 18px;
@@ -123,7 +127,8 @@
 }
 .browse{
   display: flex;
-  width: 640px;
+  // width: 640px;
+  width: 100%;
   height: 24px;
   justify-content: right;
   margin-top: 7px;
