@@ -14,7 +14,7 @@ import record from './components/record'
     components: {
       info,
       record
-    }
+    },
   }
 </script>
 

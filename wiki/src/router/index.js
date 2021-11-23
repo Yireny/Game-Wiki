@@ -7,14 +7,17 @@ const guide=()=>import('../pages/guide/guide.vue')
 const community=()=>import('../pages/community/community.vue')
 const login=()=>import('../pages/login/login.vue')
 const profile=()=>import('../pages/profile/profile.vue')
-// const Card=()=>import('../components/card.vue')
 
 Vue.use(VueRouter)
 
 const routes=[
   {
     path:'',
-    redirect: '/home'
+    name:'home',
+    redirect: '/home',
+    meta:{
+      title:'首页'
+    }
   },
   {
     path:'/home',
@@ -39,17 +42,6 @@ const routes=[
   {
     path:'/profile',
     component:profile,
-    // children:[
-    //   {
-    //     path:'',
-    //     redirect: '/card'
-    //   },
-    //   {
-    //     path:'/card',
-    //     name:'/',
-    //     component:Card
-    //   }
-    // ]
   }
 ]
 
