@@ -24,7 +24,7 @@
 
 <script>
   export default {
-    name:'Login',
+    name:'login',
     data() {
       return {
         deg:0,
@@ -63,7 +63,7 @@
   width: 400px;
   height: 400px;
   border-radius: 10px;
-  background-color: rgb(252, 252, 249);
+  background-color: rgba(252, 252, 249,.7);
   // transform: rotateY(0deg);
   transition: all 1.5s ease;
   transform-style: preserve-3d;
@@ -119,7 +119,7 @@
   width: 400px;
   height: 150px;
   border-radius: 10px;
-  background-color: rgb(252, 252, 249);
+  background-color: rgba(252, 252, 249,.7);
   display: flex;
   flex-direction: column;
   justify-content: center;

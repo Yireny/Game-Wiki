@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: 'Navbar',
+  name: 'navbar',
   data() {
     return {
       currentID:1,
@@ -98,7 +98,7 @@ export default {
   height: 60px;
   font-size: 0;
   color: rgb(253, 255, 255);
-  background-color: rgb(0, 195, 255);
+  background-color: #00c3ff;
   z-index: 99;
   &__inner{
     position: relative;
@@ -150,10 +150,10 @@ export default {
     cursor: pointer;
     &--active{
       font-weight: 600px;
-      background-color: rgb(46, 206, 255);
+      background-color: #2ECEFF;
     }
     &:hover{
-      background-color: rgb(46, 206, 255);
+      background-color: #2ECEFF;
     }
   }
   &__aside{

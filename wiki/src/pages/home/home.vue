@@ -9,23 +9,23 @@
       </div>
     </div>
     <div class="aside">
-      <information></information>
+      <news></news>
     </div>
   </div>
 </template>
 
 <script>
-  import Swiper from '@/components/swiper'
-  import Card from '@/components/card'
-  import Information from '@/pages/home/components/information'
+  import swiper from '@/components/swiper'
+  import card from '@/components/card'
+  import news from '@/pages/home/components/news'
   import { get } from '@/utils/request'
 
   export default {
-    name:'Home',
+    name:'home',
     components: {
-      Swiper,
-      Card,
-      Information
+      swiper,
+      card,
+      news
     },
     data () {
       return {

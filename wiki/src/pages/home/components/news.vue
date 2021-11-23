@@ -1,13 +1,13 @@
 <template>
-  <div class="information">
+  <div class="news">
     <div class="banner"></div>
-    <div class="news"></div>
+    <div class="information"></div>
   </div>
 </template>
 
 <script>
   export default {
-    name:'Information'
+    name:'news'
   }
 </script>
 
@@ -21,7 +21,7 @@
   border-radius: 5px;
   margin-bottom: 10px;
 }
-.news{
+.information{
   height: 700px;
   background-color: rgba(255, 255, 255, .7);
   border-radius: 5px;

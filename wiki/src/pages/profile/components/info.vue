@@ -1,30 +1,30 @@
 <template>
-  <div class="personal-data">
-      <div class="personal-data__frame">
+  <div class="info">
+      <div class="info__frame">
         <img src="../../../assets/images/头像_早露_skin1.png" alt="">
       </div>
-      <div class="personal-data__detail">
-        <div class="personal-data__info">
-          <div class="personal-data__username">用户名</div>
-          <div class="personal-data__userid">id:19919919</div>
+      <div class="info__detail">
+        <div class="info__info">
+          <div class="info__username">用户名</div>
+          <div class="info__userid">id:19919919</div>
         </div>
-        <div class="personal-data__signature">
+        <div class="info__signature">
           个性签名个性签名个性签名个性签名
         </div>
-        <div class="personal-data__edit">编辑</div>
+        <div class="info__edit">编辑</div>
       </div>
-      <div class="personal-data__interaction">
-        <div class="personal-data__item">
+      <div class="info__interaction">
+        <div class="info__item">
           <div>0</div>
-          <div>发帖</div>
+          <div class="info__item-text">发帖</div>
         </div>
-        <div class="personal-data__item">
+        <div class="info__item">
           <div>0</div>
-          <div>评论</div>
+          <div class="info__item-text">评论</div>
         </div>
-        <div class="personal-data__item">
+        <div class="info__item">
           <div>0</div>
-          <div>获赞</div>
+          <div class="info__item-text">获赞</div>
         </div>
       </div>
   </div>
@@ -32,12 +32,12 @@
 
 <script>
   export default {
-    name:'PersonalData'
+    name:'info'
   }
 </script>
 
 <style lang='scss' scoped>
-.personal-data{
+.info{
   width: 100%;
   display: flex;
   padding: 40px;
@@ -100,6 +100,10 @@
   &__item{
     width: 100px;
     text-align: center;
+    &-text{
+      font-size: 14px;
+      color: #999;
+    }
   }
 }
 </style>

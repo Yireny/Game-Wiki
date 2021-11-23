@@ -29,6 +29,7 @@ export default {
   position: relative;
   width: 100%;
   min-width: 1200px;
+  min-height: 100vh;
   background: linear-gradient(90deg, #c1ece7, #e9ebb6, #e9cbb7, #d2cbf8, #ebdec1);
   // background-size: 100% 100%;
   background-size: 500% 500%;

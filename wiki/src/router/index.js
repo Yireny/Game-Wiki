@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-const Home=()=>import('../pages/home/home.vue')
-const Encyclopedia=()=>import('../pages/encyclopedia/encyclopedia.vue')
-const Strategy=()=>import('../pages/strategy/strategy.vue')
-const Community=()=>import('../pages/community/community.vue')
-const Login=()=>import('../pages/login/login.vue')
-const Profile=()=>import('../pages/profile/profile.vue')
+const home=()=>import('../pages/home/home.vue')
+const wiki=()=>import('../pages/wiki/wiki.vue')
+const guide=()=>import('../pages/guide/guide.vue')
+const community=()=>import('../pages/community/community.vue')
+const login=()=>import('../pages/login/login.vue')
+const profile=()=>import('../pages/profile/profile.vue')
+// const Card=()=>import('../components/card.vue')
 
 Vue.use(VueRouter)
 
@@ -17,27 +18,38 @@ const routes=[
   },
   {
     path:'/home',
-    component:Home
+    component:home
   },
   {
-    path:'/encyclopedia',
-    component:Encyclopedia
+    path:'/wiki',
+    component:wiki
   },
   {
-    path:'/strategy',
-    component:Strategy
+    path:'/guide',
+    component:guide
   },
   {
     path:'/community',
-    component:Community
+    component:community
   },
   {
     path:'/login',
-    component:Login
+    component:login
   },
   {
     path:'/profile',
-    component:Profile
+    component:profile,
+    // children:[
+    //   {
+    //     path:'',
+    //     redirect: '/card'
+    //   },
+    //   {
+    //     path:'/card',
+    //     name:'/',
+    //     component:Card
+    //   }
+    // ]
   }
 ]
 

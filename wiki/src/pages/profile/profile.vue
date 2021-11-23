@@ -1,36 +1,23 @@
 <template>
   <div class="profile">
-    <personal-data></personal-data>
-    <div class="record">
-      <card></card>
-      <card></card>
-    </div>
+    <info></info>
+    <record></record>
   </div>
 </template>
 
 <script>
-import Card from '../../components/card.vue'
-import PersonalData from './components/personalData'
+import info from './components/info'
+import record from './components/record'
 
   export default {
-    name:'Profile',
+    name:'profile',
     components: {
-      PersonalData,
-      Card
+      info,
+      record
     }
   }
 </script>
 
 <style lang='scss' scoped>
-.profile{
-  border-radius: 10px;
-}
 
-.record{
-  width: 100%;
-  height: 600px;
-  margin-top: 20px;
-  background-color: rgba(255, 255, 255, .7);
-  border-radius: 10px;
-}
 </style>

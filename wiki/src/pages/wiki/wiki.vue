@@ -1,5 +1,5 @@
 <template>
-  <div class="encyclopedia">
+  <div class="wiki">
     <div class="navigation">
       <div class="navigation__title">快速导航</div>
       <div class="navigation__list">
@@ -12,12 +12,12 @@
 
 <script>
   export default {
-    name:'Encyclopedia'
+    name:'wiki'
   }
 </script>
 
 <style lang='scss' scoped>
-.encyclopedia{
+.wiki{
   height: 1000px;
   padding-top: 20px;
   background-color: rgba(250, 250, 250,.7);
