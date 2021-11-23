@@ -43,12 +43,12 @@ export default {
         },
         {
           id:2,
-          path:'/encyclopedia',
+          path:'/wiki',
           content:'百科'
         },
         {
           id:3,
-          path:'/strategy',
+          path:'/guide',
           content:'攻略'
         },
         {
