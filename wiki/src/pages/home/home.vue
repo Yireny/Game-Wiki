@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="home">
     <div class="content">
       <div class="content__swiper">
         <swiper :slide='slide'></swiper>
@@ -50,12 +50,13 @@
 </script>
 
 <style lang='scss' scoped>
-.main{
+.home{
   border-radius: 5px;
   display: flex;
 }
 .content{
   width: 700px;
+  margin: 0 auto;
   &__swiper{
     width: 700px;
     height: 250px;

@@ -1,33 +1,33 @@
 <template>
   <div class="card">
-    <div class="user">
-      <div class="user__frame">
+    <div class="card-user">
+      <div class="card-user__frame">
         <img :src="post.frame" alt="">
       </div>
-      <div class="user__name">{{post.name}}</div>
-      <div class="user__push-time">{{post.time}}</div>
+      <div class="card-user__name">{{post.name}}</div>
+      <div class="card-user__push-time">{{post.time}}</div>
     </div>
-    <div class="content">
-      <div class="content__title">{{post.title}}</div>
-      <div class="content__content">{{post.content}}</div>
-     <div class="content__img">
+    <div class="card-content">
+      <div class="card-content__title">{{post.title}}</div>
+      <div class="card-content__content">{{post.content}}</div>
+     <div class="card-content__img">
         <img v-if="post.img1" :src="post.img1" alt="">
         <img v-if="post.img2" :src="post.img2" alt="">
         <img v-if="post.img3" :src="post.img3" alt="">
       </div>
     </div>
-    <div class="browse">
-      <div class="browse__item">
+    <div class="card-browse">
+      <div class="card-browse__item">
         <span class="iconfont">&#xe622;</span>
-        <span class="browse__text">{{post.views}}</span>
+        <span class="card-browse__text">{{post.views}}</span>
       </div>
-      <div class="browse__item">
+      <div class="card-browse__item">
         <span class="iconfont">&#xe600;</span>
-        <span class="browse__text">{{post.comments}}</span>
+        <span class="card-browse__text">{{post.comments}}</span>
       </div>
-      <div class="browse__item">
+      <div class="card-browse__item">
         <span class="iconfont">&#xec7f;</span>
-        <span class="browse__text">{{post.like}}</span>
+        <span class="card-browse__text">{{post.like}}</span>
       </div>
     </div>
   </div>
@@ -49,17 +49,18 @@
 
 <style lang='scss' scoped>
 .card{
-  // width: 700px;
   width: 100%;
   height: 300px;
   padding: 24px 30px;
   border-bottom: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .7);
   box-sizing: border-box;
   &:last-child{
     border-bottom: none;
   }
 }
-.user{
+.card-user{
   display: flex;
   // width: 640px;
   width: 100%;
@@ -89,7 +90,7 @@
     color: #ccc;
   }
 }
-.content{
+.card-content{
   // width: 640px;
   width: 100%;
   height: 176px;
@@ -125,7 +126,7 @@
     }
   }
 }
-.browse{
+.card-browse{
   display: flex;
   // width: 640px;
   width: 100%;

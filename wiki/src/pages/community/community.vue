@@ -1,19 +1,39 @@
 <template>
-  <div class="main">
-
+  <div class="community">
+    <div class="community__main">
+      <publish></publish>
+      <dynamic></dynamic>
+    </div>
+    <div class="aside">
+      <topic></topic>
+    </div>
   </div>
 </template>
 
 <script>
+import publish from './components/publish'
+import dynamic from './components/dynamic'
+import topic from './components/topic'
+
   export default {
-    name:'community'
+    name:'community',
+    components:{
+      publish,
+      dynamic,
+      topic
+    }
   }
 </script>
 
 <style scoped>
-.main{
-  height: 1000px;
-  background-color: rgb(250, 250, 250);
-  border-radius: 10px;
+.community{
+  display: flex;
+  width: 100%;
+}
+.community__main{
+  width: 700px;
+}
+.aside{
+  width: 280px;
 }
 </style>

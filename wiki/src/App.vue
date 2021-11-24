@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <navbar class="navbar"></navbar>
-    <div class="content">
+    <div class="wrap">
       <transition name="fade" mode="out-in">
         <router-view></router-view>
       </transition>
@@ -42,7 +42,7 @@ export default {
   top: 0;
 }
 
-.content{
+.wrap{
   width: 1000px;
   margin: 0 auto;
   padding-top: 10px;
