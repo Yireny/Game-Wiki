@@ -1,16 +1,16 @@
 <template>
   <div class="navbar">
     <div class="navbar__inner">
-      <div class="navbar__logo" @click="setPath(navItemsAside[0])">
+      <div class="navbar__logo" @click="setPath(navItems[0])">
         <img src="@/assets/images/logo.png" alt="">
       </div>
-      <div class="navbar__title" @click="setPath(navItemsAside[0])">Arknights·明日方舟</div>
+      <div class="navbar__title" @click="setPath(navItems[0])">Arknights·明日方舟</div>
       <div class="navbar__wrap">
         <span
         class="navbar__item"
         :class="{'navbar__item--active': currentID===item.id}"
         @click="setPath(item)"
-        v-for="item in navItems"
+        v-for="item in navItems.slice(0,4)"
         :key="item.id"
         >
           {{item.content}}
@@ -18,7 +18,7 @@
       </div>
       <div class="navbar__aside">
         <div class="navbar__item">消息</div>
-        <div class="navbar__login" :class="{'navbar__login--active': currentID===5}" @click="setPath(navItemsAside[1])">
+        <div class="navbar__login" :class="{'navbar__login--active': currentID===5}" @click="setPath(navItems[4])">
           <div class="navbar__frame">
             <img src="@/assets/images/头像_早露_skin1.png" alt="">
           </div>
@@ -55,14 +55,6 @@ export default {
           id:4,
           path:'/community',
           content:'社区'
-        }
-      ],
-      //两侧路由跳转
-      navItemsAside:[
-        {
-          id:1,
-          path:'/home',
-          content:'首页'
         },
         {
           id:5,

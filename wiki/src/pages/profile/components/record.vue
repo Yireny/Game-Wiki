@@ -1,6 +1,8 @@
 <template>
   <div class="personal-record">
     <card></card>
+    <card></card>
+    <card></card>
   </div>
 </template>
 

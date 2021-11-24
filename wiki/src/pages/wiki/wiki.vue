@@ -1,42 +1,61 @@
 <template>
   <div class="wiki">
-    <div class="navigation">
-      <div class="navigation__title">快速导航</div>
-      <div class="navigation__list">
-        <div class="navigation__item"></div>
+    <div class="guide">
+      <div class="guide__title">
+        <span class="iconfont guide__title-icon">&#xe692;</span>
+        <span>快捷导航</span>
+      </div>
+      <div class="guide__list">
+        <guide-item v-for="item in 4"></guide-item>
       </div>
     </div>
-    <div class="cha">角色</div>
+    <div class="content">
+    </div>
   </div>
 </template>
 
 <script>
+import guideItem from './components/guideItem'
+
   export default {
-    name:'wiki'
+    name:'wiki',
+    components:{
+      guideItem
+    }
   }
 </script>
 
 <style lang='scss' scoped>
 .wiki{
-  height: 1000px;
+  width: 100%;
   padding-top: 20px;
   background-color: rgba(250, 250, 250,.7);
   border-radius: 10px;
 }
-.navigation{
+.guide{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 300px;
+  padding: 0 20px;
+  &__title{
+    font-size: 16px;
+    font-weight: 600;
+    &-icon{
+      width: 28px;
+      height: 28px;
+      font-weight: normal;
+    }
+  }
   &__list{
-    padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    background-color: antiquewhite;
-  }
-  &__item{
-    width: 200px;
-    height: 200px;
+    margin-top: 20px;
+    justify-content: space-evenly;
   }
 }
-.cha{
-  height: 300px;
+.content{
+  width: 100%;
+  height: 500px;
 }
 </style>

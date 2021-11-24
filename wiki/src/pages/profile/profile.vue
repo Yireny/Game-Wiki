@@ -1,6 +1,6 @@
 <template>
   <div class="profile">
-    <info></info>
+    <info :profile='profile'></info>
     <record></record>
   </div>
 </template>
@@ -8,6 +8,7 @@
 <script>
 import info from './components/info'
 import record from './components/record'
+import { get } from '@/utils/request'
 
   export default {
     name:'profile',
@@ -15,6 +16,22 @@ import record from './components/record'
       info,
       record
     },
+    data () {
+      return {
+        profile:{}
+      }
+    },
+    methods: {
+      getProfile(){
+        get('/profile',{}).then(res=>{
+          this.profile=res.data
+        })
+      }
+    },
+    created () {
+      this.getProfile()
+      console.log(this.profile)
+    }
   }
 </script>
 

@@ -1,29 +1,29 @@
 <template>
   <div class="info">
       <div class="info__frame">
-        <img src="../../../assets/images/头像_早露_skin1.png" alt="">
+        <img :src="profile.frame" alt="">
       </div>
       <div class="info__detail">
         <div class="info__info">
-          <div class="info__username">用户名</div>
-          <div class="info__userid">id:19919919</div>
+          <div class="info__name">{{profile.name}}</div>
+          <div class="info__id">id:{{profile.id}}</div>
         </div>
         <div class="info__signature">
-          个性签名个性签名个性签名个性签名
+          {{profile.signature}}
         </div>
         <div class="info__edit">编辑</div>
       </div>
       <div class="info__interaction">
         <div class="info__item">
-          <div>0</div>
+          <div>{{profile.post}}</div>
           <div class="info__item-text">发帖</div>
         </div>
         <div class="info__item">
-          <div>0</div>
+          <div>{{profile.reply}}</div>
           <div class="info__item-text">评论</div>
         </div>
         <div class="info__item">
-          <div>0</div>
+          <div>{{profile.like}}</div>
           <div class="info__item-text">获赞</div>
         </div>
       </div>
@@ -32,7 +32,15 @@
 
 <script>
   export default {
-    name:'info'
+    name:'info',
+    props:{
+      profile:{
+        type:Object,
+        default(){
+          return {}
+        }
+      }
+    }
   }
 </script>
 
@@ -65,12 +73,12 @@
     height: 28px;
     line-height: 28px;
   }
-  &__username{
+  &__name{
     font-size: 16px;
     font-weight: 600;
     padding-right: 20px;
   }
-  &__userid{
+  &__id{
     font-size: 12px;
     color: #ccc;
   }

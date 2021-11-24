@@ -27,21 +27,22 @@ Mock.mock('http://api/swiper',Mock.mock({
 
 
 
-
 //用户信息
-Mock.mock('/',Mock.mock({
-  'user|5-10':{
-    'id':'@id|6',
+Mock.mock('http://api/profile',Mock.mock({
+  'data':{
+    'id':'@id',
     'name':'@cname',
-    'frame':'头像编号',
+    'frame':"@image('24x24', '#fff', 'ss')",
     'password':123456,
     'gender':'@gender',
     'birthday':'@date("yyyy-MM-dd")',
+    'signature':'@cparagraph',
     'post':['postID'],
     'reply':['replyID'],
     'like':'@number'
   }
-}).user)
+}).data)
+
 
 //头像列表
 Mock.mock('/',Mock.mock({
