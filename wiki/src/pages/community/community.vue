@@ -30,7 +30,7 @@ import topic from './components/topic'
   display: flex;
   width: 100%;
 }
-.community__main{
+.community-main{
   width: 700px;
 }
 .community-aside{

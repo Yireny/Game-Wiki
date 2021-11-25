@@ -1,17 +1,17 @@
 <template>
-  <div class="label">
-    导航
+  <div class="tabbar">
+    tabbar
   </div>
 </template>
 
 <script>
   export default {
-    name:'label'
+    name:'tabbar'
   }
 </script>
 
 <style lang='scss' scoped>
-.label{
+.tabbar{
   width: 100%;
   height: 24px;
   background-color: #fff;
