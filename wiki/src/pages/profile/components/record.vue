@@ -1,5 +1,5 @@
 <template>
-  <div class="personal-record">
+  <div class="profile-record">
     <card></card>
     <card></card>
     <card></card>
