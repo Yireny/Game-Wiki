@@ -1,10 +1,10 @@
 <template>
   <div class="community">
-    <div class="community__main">
+    <div class="community-main">
       <publish></publish>
       <dynamic></dynamic>
     </div>
-    <div class="aside">
+    <div class="community-aside">
       <topic></topic>
     </div>
   </div>
@@ -33,7 +33,7 @@ import topic from './components/topic'
 .community__main{
   width: 700px;
 }
-.aside{
+.community-aside{
   width: 280px;
 }
 </style>
