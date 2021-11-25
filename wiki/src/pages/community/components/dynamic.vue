@@ -1,18 +1,18 @@
 <template>
   <div class="dynamic">
-    <tabbar></tabbar>
+    <label></label>
     <card></card>
   </div>
 </template>
 
 <script>
-import tabbar from './tabbar'
+import label from './label'
 import card from '@/components/card'
 
   export default {
     name:'dynamic',
     components:{
-      tabbar,
+      label,
       card
     }
   }
