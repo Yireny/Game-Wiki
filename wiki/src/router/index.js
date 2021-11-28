@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 const home=()=>import('../pages/home/home.vue')
 const wiki=()=>import('../pages/wiki/wiki.vue')
-const guide=()=>import('../pages/guide/guide.vue')
+const strategy=()=>import('../pages/strategy/strategy.vue')
 const community=()=>import('../pages/community/community.vue')
 const login=()=>import('../pages/login/login.vue')
 const profile=()=>import('../pages/profile/profile.vue')
@@ -28,8 +28,8 @@ const routes=[
     component:wiki
   },
   {
-    path:'/guide',
-    component:guide
+    path:'/strategy',
+    component:strategy
   },
   {
     path:'/community',

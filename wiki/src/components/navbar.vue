@@ -48,7 +48,7 @@ export default {
         },
         {
           id:3,
-          path:'/guide',
+          path:'/strategy',
           content:'攻略'
         },
         {

@@ -56,7 +56,7 @@
 }
 .content{
   width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 0 0;
   &__swiper{
     width: 700px;
     height: 250px;

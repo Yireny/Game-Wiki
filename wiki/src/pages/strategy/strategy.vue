@@ -1,17 +1,17 @@
 <template>
-  <div class="guide">
+  <div class="strategy">
 
   </div>
 </template>
 
 <script>
   export default {
-    name:'guide'
+    name:'strategy'
   }
 </script>
 
 <style scoped>
-.guide{
+.strategy{
   height: 1000px;
   background-color: rgb(250, 250, 250);
   border-radius: 10px;
