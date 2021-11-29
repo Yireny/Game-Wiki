@@ -1,6 +1,11 @@
 <template>
   <div class="guide">
-    <guide-item v-for="item in 5"></guide-item>
+    <guide-item
+    v-for="item in guide"
+    :key="item.index"
+    :guideItem='item'
+    >
+    </guide-item>
   </div>
 </template>
 
@@ -11,6 +16,14 @@ import guideItem from './guideItem'
     name:'guide',
     components: {
       guideItem
+    },
+    props:{
+      guide:{
+        type:Array,
+        default(){
+          return []
+        }
+      }
     }
   }
 </script>

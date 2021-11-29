@@ -1,12 +1,20 @@
 <template>
   <div class="guideItem">
-    <div>item</div>
+    <div>{{guideItem.title}}</div>
   </div>
 </template>
 
 <script>
   export default {
-    name:'guideItem'
+    name:'guideItem',
+    props:{
+      guideItem:{
+        type:Object,
+        default(){
+          return {}
+        }
+      }
+    }
   }
 </script>
 
