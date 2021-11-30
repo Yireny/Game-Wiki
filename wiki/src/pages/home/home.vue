@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="aside">
-      <news></news>
+      <home-news></home-news>
     </div>
   </div>
 </template>
@@ -17,7 +17,7 @@
 <script>
   import swiper from '@/components/swiper'
   import card from '@/components/card'
-  import news from '@/pages/home/components/news'
+  import homeNews from '@/pages/home/components/homeNews'
   import { get } from '@/utils/request'
 
   export default {
@@ -25,7 +25,7 @@
     components: {
       swiper,
       card,
-      news
+      homeNews
     },
     data () {
       return {

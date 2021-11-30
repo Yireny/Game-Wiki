@@ -18,7 +18,7 @@ import Card from '../../../components/card'
 </script>
 
 <style lang='scss' scoped>
-.personal-record{
+.profile-record{
   width: 100%;
   margin-top: 20px;
   background-color: rgba(255, 255, 255, .7);

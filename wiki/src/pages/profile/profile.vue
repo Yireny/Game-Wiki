@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
-    <info :profile='profile'></info>
-    <record></record>
+    <info class="profile__info" :profile='profile'></info>
+    <record class="profile__record"></record>
   </div>
 </template>
 
@@ -36,5 +36,9 @@ import { get } from '@/utils/request'
 </script>
 
 <style lang='scss' scoped>
-
+.profile{
+  &__info{
+    width: 100%;
+  }
+}
 </style>

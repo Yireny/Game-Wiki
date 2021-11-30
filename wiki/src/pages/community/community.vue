@@ -1,8 +1,8 @@
 <template>
   <div class="community">
     <div class="community-main">
-      <publish></publish>
-      <dynamic></dynamic>
+      <publish class="community__publish"></publish>
+      <dynamic class="community__dynamic"></dynamic>
     </div>
     <div class="community-aside">
       <topic></topic>
