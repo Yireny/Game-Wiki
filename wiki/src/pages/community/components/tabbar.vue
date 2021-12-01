@@ -1,6 +1,7 @@
 <template>
   <div class="tabbar">
-    tabbar
+    <span>时间</span>
+    <span>点赞数</span>
   </div>
 </template>
 
@@ -13,7 +14,8 @@
 <style lang='scss' scoped>
 .tabbar{
   width: 100%;
-  height: 24px;
-  background-color: #fff;
+  height: 34px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .7);
 }
 </style>

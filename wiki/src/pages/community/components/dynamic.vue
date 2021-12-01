@@ -1,6 +1,6 @@
 <template>
   <div class="dynamic">
-    <tabbar></tabbar>
+    <tabbar class="dynamic__tabbar"></tabbar>
     <card></card>
   </div>
 </template>
@@ -21,5 +21,8 @@ import card from '@/components/card'
 <style lang='scss' scoped>
 .dynamic{
   width: 100%;
+  &__tabbar{
+    margin-bottom: 1px;
+  }
 }
 </style>

@@ -5,9 +5,9 @@
     </div>
     <div class="home-news__information">
       <div class="home-news__title">最新资讯</div>
-      <div class="home-news__item">内容内容内容内容内容内容内容内容</div>
-      <div class="home-news__item">内容内容内容内容内容内容内容内容</div>
-      <div class="home-news__item">内容内容内容内容内容内容内容内容</div>
+      <div class="home-news__item">【活动】内容内容内容内容内容内容内容内容</div>
+      <div class="home-news__item">【公告】内容内容内容内容内容内容内容内容</div>
+      <div class="home-news__item">【公告】内容内容内容内容内容内容内容内容</div>
 
     </div>
   </div>

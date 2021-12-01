@@ -1,11 +1,26 @@
 <template>
   <div class="role-map">
     <div class="role-map__screen">
-      <div class="role-map__rarity">
-        <span>稀有度</span>
-      </div>
       <div class="role-map__occupation">
         <span>职业</span>
+        <span>先锋</span>
+        <span>近卫</span>
+        <span>狙击</span>
+        <span>重装</span>
+        <span>医疗</span>
+        <span>辅助</span>
+        <span>术师</span>
+        <span>特种</span>
+      </div>
+      <div class="role-map__rarity">
+        <span>稀有度</span>
+        <span>⭐</span>
+        <span>⭐</span>
+        <span>⭐</span>
+        <span>⭐</span>
+        <span>⭐</span>
+        <span>⭐</span>
+        <span>全部</span>
       </div>
     </div>
     <div class="role-map__wrap">
@@ -27,6 +42,7 @@ import roleMapItem from './roleMapItem'
 
 <style lang='scss' scoped>
 .role-map{
+  padding: 20px;
   &__screen{
     width: 100%;
   }

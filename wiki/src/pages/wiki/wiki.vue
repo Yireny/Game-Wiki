@@ -1,12 +1,14 @@
 <template>
   <div class="wiki">
-    <div class="wiki__title">快捷导航</div>
-    <guide
-    class="wiki__guide"
-    :guide='guide'
-    >
-    </guide>
-    <role-map v-if="currentIndex==1"></role-map>
+    <div class="wiki__header">
+      <div class="wiki__title">快捷导航</div>
+      <guide
+      class="wiki__guide"
+      :guide='guide'
+      >
+      </guide>
+    </div>
+    <role-map class="wiki__main" v-if="currentIndex==1"></role-map>
     <enemy v-if="currentIndex==2"></enemy>
     <props v-if="currentIndex==3"></props>
     <fashion v-if="currentIndex==4"></fashion>
@@ -65,15 +67,23 @@ import stage from './components/stage/stage'
 <style lang='scss' scoped>
 .wiki{
   width: 100%;
-  padding: 20px;
-  background-color: rgba(250, 250, 250,.7);
-  border-radius: 10px;
-  box-sizing: border-box;
+  &__header{
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(250, 250, 250,.7);
+  }
   &__title{
     margin-bottom: 30px;
   }
   &__guide{
     margin-bottom: 30px;
+  }
+  &__main{
+    margin-top: 20px;
+    padding: 0 auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: rgba(250, 250, 250,.7);
   }
 }
 </style>

@@ -1,6 +1,10 @@
 <template>
   <div class="role-map-item">
-    <img class="role-map-item__img" src="@/assets/images/头像_早露_skin1.png" alt="">
+    <div class="role-map-item__wrap">
+      <img class="role-map-item__img" src="@/assets/images/头像_早露_skin1.png" alt="">
+      <img class="role-map-item__occupation" src="" alt="">
+      <img class="role-map-item__rarity" src="" alt="">
+    </div>
     <div class="role-map-item__name">早露</div>
   </div>
 </template>
@@ -18,9 +22,14 @@
   border: 1px solid #BFBFBF;
   border-radius: 5px;
   box-sizing: border-box;
+  &__wrap{
+    margin: 2px;
+    border: 1px solid rgba($color: #fff, $alpha: .5);
+    border-radius: 5px;
+  }
   &__img{
-    width: 120px;
-    height: 120px;
+    width: 100%;
+    height: 100%;
   }
   &__name{
     width: 120px;

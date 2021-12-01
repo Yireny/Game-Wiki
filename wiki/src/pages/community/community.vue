@@ -25,13 +25,20 @@ import topic from './components/topic'
   }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
 .community{
   display: flex;
   width: 100%;
+  &__publish{
+    width: 100%;
+  }
+  &__dynamic{
+    margin-top: 20px;
+  }
 }
 .community-main{
   width: 700px;
+  margin-right: auto;
 }
 .community-aside{
   width: 280px;
