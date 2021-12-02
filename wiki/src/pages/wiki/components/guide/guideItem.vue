@@ -24,5 +24,9 @@
   height: 155px;
   border-radius: 10px;
   background-color: rgba(225, 225, 225, 0.5);
+  font-size: 24px;
+  text-align: center;
+  padding-top: 55px;
+  box-sizing: border-box;
 }
 </style>

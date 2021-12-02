@@ -1,25 +1,19 @@
 <template>
   <div class="role-map">
     <div class="role-map__screen">
-      <div class="role-map__occupation">
-        <span>职业</span>
-        <span>先锋</span>
-        <span>近卫</span>
-        <span>狙击</span>
-        <span>重装</span>
-        <span>医疗</span>
-        <span>辅助</span>
-        <span>术师</span>
-        <span>特种</span>
+      <div class="occupation">
+        <span class="occupation__title">职业</span>
+        <span
+        class="occupation__item"
+        v-for="(item,index) in occupation"
+        :key="index"
+        >
+          {{item}}
+        </span>
       </div>
-      <div class="role-map__rarity">
-        <span>稀有度</span>
-        <span>⭐</span>
-        <span>⭐</span>
-        <span>⭐</span>
-        <span>⭐</span>
-        <span>⭐</span>
-        <span>⭐</span>
+      <div class="rarity">
+        <span class="rarity__title">稀有度</span>
+        <span class="rarity__item" v-for="item in 6">⭐</span>
         <span>全部</span>
       </div>
     </div>
@@ -36,6 +30,11 @@ import roleMapItem from './roleMapItem'
     name:'roleMap',
     components: {
       roleMapItem
+    },
+    data () {
+      return {
+        occupation:['先锋','近卫','狙击','重装','医疗','辅助','术师','特种']
+      }
     }
   }
 </script>
@@ -58,6 +57,26 @@ import roleMapItem from './roleMapItem'
     margin-right: 20px;
     &:nth-child(7n){
       margin-right: 0;
+    }
+  }
+  .occupation{
+    margin-bottom: 10px;
+    &__title{
+      font-size: 20px;
+      margin-right: 40px;
+    }
+    &__item{
+      border: 1px solid #fff;
+      margin-right: 10px;
+    }
+  }
+  .rarity{
+    &__title{
+      font-size: 20px;
+      margin-right: 20px;
+    }
+    &__item{
+      margin-right: 10px;
     }
   }
 }
