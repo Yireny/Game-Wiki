@@ -62,12 +62,13 @@
 }
 .card-user{
   display: flex;
+  align-items: center;
   width: 100%;
-  height: 24px;
+  height: 36px;
   margin-bottom: 15px;
   &__frame{
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
     background-color: #fff;
     border-radius: 100%;
     & img{

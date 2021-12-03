@@ -1,10 +1,11 @@
 <template>
   <div class="publish">
     <div class="publish__title">选择话题</div>
-    <div class="publish__content">内容</div>
+    <m-input></m-input>
     <div class="publish__toolbar">
-      <div class="publish__tools">
-        图片
+      <div>
+        <span class="publish__tools iconfont">&#xe601;</span>
+        <span class="publish__tools iconfont">&#xe8ba;</span>
       </div>
       <div class="publish__btn">发布</div>
     </div>
@@ -12,8 +13,13 @@
 </template>
 
 <script>
+import mInput from '@/components/m-input' 
+
   export default {
-    name:'publish'
+    name:'publish',
+    components:{
+      mInput
+    }
   }
 </script>
 
@@ -26,21 +32,24 @@
   background-color: rgba($color: #fff, $alpha: .7);
   &__title{
     height: 24px;
+    color: #99a2aa;
   }
-  &__content{
-    min-height: 22px;
-    max-height: 300px;
-    font-size: 14px;
-    letter-spacing: 1px;
-    line-height: 22px;
-    box-sizing: border-box;
-    color: #222;
-  }
+ 
   &__toolbar{
     display: flex;
     justify-content: space-between;
     height: 32px;
     margin-top: 16px;
+  }
+  &__tools{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 24px;
+    color: #999;
+    margin-right: 10px;
+    cursor: pointer;
   }
   &__btn{
     width: 70px;

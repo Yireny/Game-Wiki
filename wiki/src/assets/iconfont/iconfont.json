@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "5835462",
+      "name": "分类",
+      "font_class": "fenlei",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "16516747",
+      "name": "分类",
+      "font_class": "fenlei1",
+      "unicode": "e6b3",
+      "unicode_decimal": 59059
+    },
+    {
+      "icon_id": "122304",
+      "name": "表情",
+      "font_class": "biaoqing",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "4936673",
+      "name": "star-fill",
+      "font_class": "star-fill",
+      "unicode": "e86a",
+      "unicode_decimal": 59498
+    },
+    {
+      "icon_id": "11372711",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "e8ba",
+      "unicode_decimal": 59578
+    },
+    {
+      "icon_id": "11372652",
+      "name": "定位",
+      "font_class": "dingwei1",
+      "unicode": "e8ae",
+      "unicode_decimal": 59566
+    },
+    {
       "icon_id": "1507976",
       "name": "定位",
       "font_class": "dingwei",

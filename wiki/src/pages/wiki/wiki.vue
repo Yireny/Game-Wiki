@@ -4,15 +4,16 @@
       <div class="wiki__title">快捷导航</div>
       <guide
       class="wiki__guide"
-      :guide='guide'
+      @test='test'
+      :wikiIndex='wikiIndex'
       >
       </guide>
     </div>
-    <role-map class="wiki__main" v-if="currentIndex==1"></role-map>
-    <enemy v-if="currentIndex==2"></enemy>
-    <props v-if="currentIndex==3"></props>
-    <fashion v-if="currentIndex==4"></fashion>
-    <stage v-if="currentIndex==5"></stage>
+    <role-map class="wiki__main" v-if="wikiIndex===1"></role-map>
+    <enemy v-if="wikiIndex===2"></enemy>
+    <props v-if="wikiIndex===3"></props>
+    <fashion v-if="wikiIndex===4"></fashion>
+    <stage v-if="wikiIndex===5"></stage>
   </div>
 </template>
 
@@ -36,29 +37,13 @@ import stage from './components/stage/stage'
     },
     data () {
       return {
-        currentIndex:1,
-        guide:[
-          {
-            index:0,
-            title:'干员'
-          },
-          {
-            index:1,
-            title:'敌人'
-          },
-          {
-            index:2,
-            title:'道具'
-          },
-          {
-            index:3,
-            title:'时装'
-          },
-          {
-            index:4,
-            title:'关卡'
-          }
-        ]
+        wikiIndex:1,
+      }
+    },
+    methods: {
+      test(index){
+        this.wikiIndex=index
+        console.log(index)
       }
     }
   }

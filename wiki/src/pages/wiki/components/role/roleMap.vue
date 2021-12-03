@@ -13,12 +13,19 @@
       </div>
       <div class="rarity">
         <span class="rarity__title">稀有度</span>
-        <span class="rarity__item" v-for="item in 6">⭐</span>
-        <span>全部</span>
+        <span
+        class="rarity__item iconfont"
+        :class="{'rarity__item--active':true}"
+        v-for="index in 6"
+        :key="index"
+        >
+        &#xe86a;
+        </span>
+        <span class="rarity__item">全部</span>
       </div>
     </div>
     <div class="role-map__wrap">
-      <role-map-item class="role-map-item" v-for="item in 20"></role-map-item>
+      <role-map-item class="role-map-item" v-for="index in 20" :key="index"></role-map-item>
     </div>
   </div>
 </template>
@@ -33,6 +40,7 @@ import roleMapItem from './roleMapItem'
     },
     data () {
       return {
+        star:2,
         occupation:['先锋','近卫','狙击','重装','医疗','辅助','术师','特种']
       }
     }
@@ -77,6 +85,11 @@ import roleMapItem from './roleMapItem'
     }
     &__item{
       margin-right: 10px;
+      color: #999;
+      cursor: pointer;
+      &--active{
+        color: #FEDE04;
+      }
     }
   }
 }

@@ -1,16 +1,16 @@
 <template>
   <div>
-    <fashion></fashion>
+    <fashion-item></fashion-item>
   </div>
 </template>
 
 <script>
-import fashion from './fashionItem'
+import fashionItem from './fashionItem'
 
   export default {
     name:'fashion',
     components: {
-      fashion
+      fashionItem
     }
   }
 </script>
