@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <props-item></props-item>
+  <div class="props">
+    <div class="props__wrap">
+      <props-item v-for="index in 20" :key="index"></props-item>
+    </div>
   </div>
 </template>
 
@@ -16,5 +18,13 @@ import propsItem from './propsItem'
 </script>
 
 <style lang='scss' scoped>
-
+.props{
+  width: 100%;
+  height: 700px;
+  &__wrap{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+    grid-gap: 10px;
+  }
+}
 </style>

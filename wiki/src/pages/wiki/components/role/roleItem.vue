@@ -1,23 +1,23 @@
 <template>
-  <div class="role-map-item">
-    <div class="role-map-item__wrap">
-      <img class="role-map-item__img" src="" alt="">
-      <img class="role-map-item__occupation" src="" alt="">
-      <img class="role-map-item__rarity" src="" alt="">
+  <div class="role-item">
+    <div class="role-item__wrap">
+      <img class="role-item__img" src="" alt="">
+      <img class="role-item__occupation" src="" alt="">
+      <img class="role-item__rarity" src="" alt="">
     </div>
-    <div class="role-map-item__name">xxx</div>
+    <div class="role-item__name">xxx</div>
   </div>
 </template>
 
 <script>
   export default {
-    name:'roleMapItem'
+    name:'roleItem'
   }
 </script>
 
 <style lang='scss' scoped>
-.role-map-item{
-  width: 120px;
+.role-item{
+  // width: 120px;
   background-color: rgba($color: #fff, $alpha: .1);
   border: 1px solid #BFBFBF;
   border-radius: 5px;
@@ -32,7 +32,7 @@
     height: 100%;
   }
   &__name{
-    width: 120px;
+    width: 100%;
     text-align: center;
   }
 }

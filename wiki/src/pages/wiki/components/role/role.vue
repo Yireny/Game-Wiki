@@ -55,19 +55,17 @@ import roleItem from './roleItem'
     border-bottom: 1px solid #ebebeb;
   }
   &__wrap{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+    // grid-gap: 5px;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    // grid-auto-rows: 150px;
     width: 100%;
     padding-top: 30px;
     box-sizing: border-box;
   }
-  &-item{
-    margin-bottom: 20px;
-    margin-right: 20px;
-    &:nth-child(7n){
-      margin-right: 0;
-    }
-  }
+
   .occupation{
     margin-bottom: 10px;
     &__title{
