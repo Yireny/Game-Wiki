@@ -9,17 +9,17 @@
       >
       </guide>
     </div>
-    <role-map class="wiki__main" v-if="wikiIndex===1"></role-map>
-    <enemy v-if="wikiIndex===2"></enemy>
-    <props v-if="wikiIndex===3"></props>
-    <fashion v-if="wikiIndex===4"></fashion>
-    <stage v-if="wikiIndex===5"></stage>
+    <role class="wiki__main" v-if="wikiIndex===1"></role>
+    <enemy class="wiki__main" v-if="wikiIndex===2"></enemy>
+    <props class="wiki__main" v-if="wikiIndex===3"></props>
+    <fashion class="wiki__main" v-if="wikiIndex===4"></fashion>
+    <stage class="wiki__main" v-if="wikiIndex===5"></stage>
   </div>
 </template>
 
 <script>
 import guide from './components/guide/guide'
-import roleMap from './components/role/roleMap'
+import role from './components/role/role'
 import enemy from './components/enemy/enemy'
 import fashion from './components/fashion/fashion'
 import props from './components/props/props'
@@ -29,7 +29,7 @@ import stage from './components/stage/stage'
     name:'wiki',
     components:{
       guide,
-      roleMap,
+      role,
       enemy,
       fashion,
       props,
@@ -43,7 +43,6 @@ import stage from './components/stage/stage'
     methods: {
       test(index){
         this.wikiIndex=index
-        console.log(index)
       }
     }
   }
@@ -55,7 +54,7 @@ import stage from './components/stage/stage'
   &__header{
     border-radius: 10px;
     padding: 20px;
-    background-color: rgba(250, 250, 250,.7);
+    background-color: rgba($color: #FFFFFF, $alpha: .7);
   }
   &__title{
     margin-bottom: 30px;
@@ -65,10 +64,10 @@ import stage from './components/stage/stage'
   }
   &__main{
     margin-top: 20px;
-    padding: 0 auto;
+    padding: 20px;
     border-radius: 10px;
     box-sizing: border-box;
-    background-color: rgba(250, 250, 250,.7);
+    background-color: rgba($color: #FFFFFF, $alpha: .7);
   }
 }
 </style>

@@ -121,7 +121,7 @@ export default {
     cursor: pointer;
     &::before{
       position: absolute;
-      top: 24px;
+      top: 0;
       left: 0;
       height: 15px;
       border-left: 1px solid rgba(255, 255, 255, .3);

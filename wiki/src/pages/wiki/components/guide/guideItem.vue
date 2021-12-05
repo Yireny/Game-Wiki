@@ -25,13 +25,13 @@
   width: 150px;
   height: 130px;
   border-radius: 10px;
-  background-color: rgba(225, 225, 225, 0.5);
+  // background-color: rgba($color: #FFFFFF, $alpha: .7);
   box-shadow: 0px 5px 16px rgba(9, 33, 58, 0.08);
   font-size: 24px;
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
-  transition: all .5s;
+  transition: transform .3s;
   &__bg{
     display: block;
     width: 96px;
@@ -46,12 +46,13 @@
   }
   &:hover{
     color: #00b5e5;
+    transform: scale(1.05);
     background-color:rgba(225, 225, 225, 0.8) ;
   }
   &--active{
-    transform: scale(1.1);
-    animation: scale .5s;
+    transform: scale(1.1) !important;
     color: #00b5e5;
+    background-color:rgba(225, 225, 225, 0.8) ;
     box-shadow: 0px 5px 16px rgba(9, 33, 58, 0.16);
   }
 }

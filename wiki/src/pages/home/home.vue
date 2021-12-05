@@ -51,12 +51,10 @@
 
 <style lang='scss' scoped>
 .home{
-  border-radius: 5px;
   display: flex;
 }
 .content{
   width: 700px;
-  // margin: 0 auto 0 0;
   margin-right: auto;
   &__swiper{
     width: 700px;
@@ -64,7 +62,6 @@
   }
   &__information{
     width: 100%;
-    // background-color: rgba(255, 255, 255,.7);
     border-radius: 10px;
   }
 }

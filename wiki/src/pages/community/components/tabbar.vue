@@ -46,7 +46,7 @@
       width: 100%;
       height: 2px;
       transform: scaleX(0);
-      transition: all .5s;
+      transition: transform .5s;
       background-color: #00b5e5;
       content: '';
     }

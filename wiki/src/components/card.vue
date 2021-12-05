@@ -54,7 +54,7 @@
   padding: 24px 30px;
   border-bottom: 1px solid #ccc;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, .7);
+  background-color: rgba($color: #FFFFFF, $alpha: .7);
   box-sizing: border-box;
   &:last-child{
     border-bottom: none;

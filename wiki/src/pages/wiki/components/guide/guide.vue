@@ -64,9 +64,7 @@ import guideItem from './guideItem'
 <style lang='scss' scoped>
 .guide{
   display: flex;
-  // justify-content: space-between;
   justify-content: space-evenly;
-  // justify-content: center;
   flex-wrap: wrap;
   width: 100%;
   box-sizing: border-box;

@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <navbar class="navbar"></navbar>
-    <div class="wrap">
+    <div class="app__wrap">
       <transition name="fade" mode="out-in">
         <router-view></router-view>
       </transition>
     </div>
-    <div class="footer">
+    <div class="app__footer">
       <statement></statement>
     </div>
   </div>
@@ -30,6 +30,7 @@ export default {
   width: 100%;
   min-width: 1200px;
   min-height: 100vh;
+  padding-bottom: 10px;
   background: linear-gradient(90deg, #c1ece7, #e9ebb6, #e9cbb7, #d2cbf8, #ebdec1);
   // background-size: 100% 100%;
   background-size: 500% 500%;
@@ -37,21 +38,24 @@ export default {
   -webkit-animation: gradual 20s ease infinite;
   background-attachment: fixed;
 }
+
 .navbar {
   position: sticky;
   top: 0;
 }
 
-.wrap{
+.app__wrap{
   width: 1000px;
+  min-height: 500px;
   margin: 0 auto;
   padding-top: 10px;
   box-sizing: border-box;
 }
-.footer{
-  width: 100%;
-  padding: 30px 100px;
-  box-sizing: border-box;
+
+.app__footer{
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 @keyframes gradual {

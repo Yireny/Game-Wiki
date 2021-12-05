@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="enemy">
     <enemy-item></enemy-item>
   </div>
 </template>
@@ -16,5 +16,9 @@ import enemyItem from './enemyItem'
 </script>
 
 <style lang='scss' scoped>
+.enemy{
+  width: 100%;
+  height: 700px;
 
+}
 </style>

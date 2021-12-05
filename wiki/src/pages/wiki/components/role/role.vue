@@ -1,6 +1,6 @@
 <template>
-  <div class="role-map">
-    <div class="role-map__screen">
+  <div class="role">
+    <div class="role__screen">
       <div class="occupation">
         <span class="occupation__title">职业</span>
         <span
@@ -24,19 +24,19 @@
         <span class="rarity__item">全部</span>
       </div>
     </div>
-    <div class="role-map__wrap">
-      <role-map-item class="role-map-item" v-for="index in 20" :key="index"></role-map-item>
+    <div class="role__wrap">
+      <role-item class="role-item" v-for="index in 20" :key="index"></role-item>
     </div>
   </div>
 </template>
 
 <script>
-import roleMapItem from './roleMapItem'
+import roleItem from './roleItem'
 
   export default {
     name:'roleMap',
     components: {
-      roleMapItem
+      roleItem
     },
     data () {
       return {
@@ -48,10 +48,11 @@ import roleMapItem from './roleMapItem'
 </script>
 
 <style lang='scss' scoped>
-.role-map{
-  padding: 20px;
+.role{
   &__screen{
     width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ebebeb;
   }
   &__wrap{
     display: flex;
