@@ -32,23 +32,23 @@ import guideItem from './guideItem'
         guide:[
           {
             index:1,
-            text:'干员',
+            text:'干员档案',
           },
           {
             index:2,
-            text:'敌人',
+            text:'敌人档案',
           },
           {
             index:3,
-            text:'道具',
+            text:'道具资料',
           },
           {
             index:4,
-            text:'时装',
+            text:'时装回廊',
           },
           {
             index:5,
-            text:'关卡',
+            text:'关卡一览',
           }
         ]
       }

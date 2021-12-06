@@ -1,17 +1,25 @@
 <template>
   <div class="role-item">
     <div class="role-item__wrap">
-      <img class="role-item__img" src="" alt="">
+      <img class="role-item__img" :src="role.avatar" alt="">
       <img class="role-item__occupation" src="" alt="">
       <img class="role-item__rarity" src="" alt="">
     </div>
-    <div class="role-item__name">xxx</div>
+    <div class="role-item__name">{{role.name}}</div>
   </div>
 </template>
 
 <script>
   export default {
-    name:'roleItem'
+    name:'roleItem',
+    props:{
+      role:{
+        type:Object,
+        default(){
+          return {}
+        }
+      }
+    }
   }
 </script>
 

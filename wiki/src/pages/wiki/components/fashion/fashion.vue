@@ -1,18 +1,39 @@
 <template>
   <div class="fashion">
     <div class="fashion__wrap">
-      <fashion-item v-for="index in 20" :key="index"></fashion-item>
+      <fashion-item
+      v-for="(item,index) in fashion"
+      :key="index"
+      :fashion='item'
+      >
+      </fashion-item>
     </div>
   </div>
 </template>
 
 <script>
 import fashionItem from './fashionItem'
+import {get} from '@/utils/request'
 
   export default {
     name:'fashion',
     components: {
       fashionItem
+    },
+    data() {
+      return {
+        fashion:[]
+      }
+    },
+    methods: {
+      getFashionData(){
+        get('/fashion',{}).then(res=>{
+          this.fashion=res.data
+        })
+      }
+    },
+    created () {
+      this.getFashionData()
     }
   }
 </script>

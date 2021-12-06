@@ -37,11 +37,19 @@ const routes=[
   },
   {
     path:'/login',
+    name:'login',
     component:login
   },
   {
     path:'/profile',
     component:profile,
+    meta:{
+      isAuthenticated:false
+    },
+    beforeEnter: (to, from, next) => {
+      if (to.name !== 'login' && !false) next({ name: 'login' })
+      else next()
+    }
   }
 ]
 

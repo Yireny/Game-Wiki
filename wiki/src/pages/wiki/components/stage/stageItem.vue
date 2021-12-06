@@ -1,12 +1,25 @@
 <template>
   <div class="stage-item">
-    <div>关卡</div>
+    <div class="stage-item__wrap">
+      <img class="stage-item__img" :src="stage.avatar" alt="">
+      <img class="stage-item__occupation" src="" alt="">
+      <img class="stage-item__rarity" src="" alt="">
+    </div>
+    <div class="stage-item__name">{{stage.name}}</div>
   </div>
 </template>
 
 <script>
   export default {
-    name:'stageItem'
+    name:'stageItem',
+    props:{
+      stage:{
+        type:Object,
+        default(){
+          return {}
+        }
+      }
+    }
   }
 </script>
 

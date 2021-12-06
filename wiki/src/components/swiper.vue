@@ -94,7 +94,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba($color: #000000, $alpha: .5);
   border-radius: 100%;
   background-image: none;
   &-prev{
@@ -102,6 +102,9 @@
   }
   &-next{
     transform: translateX(-100px);
+  }
+  &:hover{
+    background-color: #00C3FF;
   }
 }
 .iconfont{

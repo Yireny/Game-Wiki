@@ -15,11 +15,11 @@
       </div>
       <div class="info__interaction">
         <div class="info__item">
-          <div>{{profile.post}}</div>
+          <div>{{post}}</div>
           <div class="info__item-text">发帖</div>
         </div>
         <div class="info__item">
-          <div>{{profile.reply}}</div>
+          <div>{{reply}}</div>
           <div class="info__item-text">评论</div>
         </div>
         <div class="info__item">
@@ -38,6 +38,18 @@
         type:Object,
         default(){
           return {}
+        }
+      }
+    },
+    computed: {
+      post(){
+        if(this.profile.post){
+          return this.profile.post.length 
+        }
+      },
+      reply(){
+        if(this.profile.reply){
+          return this.profile.reply.length
         }
       }
     }

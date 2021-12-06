@@ -1,46 +1,47 @@
 <template>
-  <div class="enemy">
-    <div class="enemy__wrap">
-      <enemy-item
-      v-for="(item,index) in enemy"
+   <div class="material">
+    <div class="material__wrap">
+      <material-item
+      v-for="(item,index) in material"
       :key="index"
-      :enemy='item'
+      :material='item'
       >
-      </enemy-item>
+      </material-item>
     </div>
   </div>
 </template>
 
 <script>
-import enemyItem from './enemyItem'
+import materialItem from './materialItem'
 import {get} from '@/utils/request'
 
   export default {
-    name:'enemy',
+    name:'material',
     components: {
-      enemyItem
+      materialItem
     },
     data() {
       return {
-        enemy:[]
+        material:[]
       }
     },
     methods: {
-      getEnemyData(){
-        get('/enemy',{}).then(res=>{
-          this.enemy=res.data
+      getMaterialData(){
+        get('/material',{}).then(res=>{
+          this.material=res.data
         })
       }
     },
     created () {
-      this.getEnemyData()
+      this.getMaterialData()
     }
   }
 </script>
 
 <style lang='scss' scoped>
-.enemy{
+.material{
   width: 100%;
+  height: 700px;
   &__wrap{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(120px,1fr));

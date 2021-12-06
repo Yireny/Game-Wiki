@@ -1,12 +1,25 @@
 <template>
   <div class="fashion-item">
-    <div>时装</div>
+    <div class="fashion-item__wrap">
+      <img class="fashion-item__img" :src="fashion.avatar" alt="">
+      <img class="fashion-item__occupation" src="" alt="">
+      <img class="fashion-item__rarity" src="" alt="">
+    </div>
+    <div class="fashion-item__name">{{fashion.name}}</div>
   </div>
 </template>
 
 <script>
   export default {
-    name:'fashionItem'
+    name:'fashionItem',
+    props:{
+      fashion:{
+        type:Object,
+        default(){
+          return {}
+        }
+      }
+    }
   }
 </script>
 

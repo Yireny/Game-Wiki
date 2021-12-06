@@ -9,11 +9,15 @@
       >
       </guide>
     </div>
-    <role class="wiki__main" v-if="wikiIndex===1"></role>
-    <enemy class="wiki__main" v-if="wikiIndex===2"></enemy>
-    <props class="wiki__main" v-if="wikiIndex===3"></props>
-    <fashion class="wiki__main" v-if="wikiIndex===4"></fashion>
-    <stage class="wiki__main" v-if="wikiIndex===5"></stage>
+    <div class="wiki__main">
+      <transition name="fade" mode="out-in">
+        <role v-if="wikiIndex===1"></role>
+        <enemy v-if="wikiIndex===2"></enemy>
+        <material v-if="wikiIndex===3"></material>
+        <fashion v-if="wikiIndex===4"></fashion>
+        <stage v-if="wikiIndex===5"></stage>
+        </transition>
+    </div>
   </div>
 </template>
 
@@ -22,7 +26,7 @@ import guide from './components/guide/guide'
 import role from './components/role/role'
 import enemy from './components/enemy/enemy'
 import fashion from './components/fashion/fashion'
-import props from './components/props/props'
+import material from './components/material/material'
 import stage from './components/stage/stage'
 
   export default {
@@ -32,7 +36,7 @@ import stage from './components/stage/stage'
       role,
       enemy,
       fashion,
-      props,
+      material,
       stage
     },
     data () {
@@ -57,17 +61,32 @@ import stage from './components/stage/stage'
     background-color: rgba($color: #FFFFFF, $alpha: .7);
   }
   &__title{
-    margin-bottom: 30px;
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ebebeb;
   }
   &__guide{
     margin-bottom: 30px;
   }
   &__main{
+    min-height: 600px;
     margin-top: 20px;
     padding: 20px;
     border-radius: 10px;
     box-sizing: border-box;
     background-color: rgba($color: #FFFFFF, $alpha: .7);
   }
+}
+
+.fade-enter,
+.fade-leave-to{
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active{
+  transition: opacity 0.2s ease;
 }
 </style>

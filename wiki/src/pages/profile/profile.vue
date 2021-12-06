@@ -30,7 +30,6 @@ import { get } from '@/utils/request'
     },
     created () {
       this.getProfile()
-      console.log(this.profile)
     }
   }
 </script>

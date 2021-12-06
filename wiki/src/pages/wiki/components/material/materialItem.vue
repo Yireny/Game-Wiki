@@ -1,19 +1,19 @@
 <template>
-  <div class="enemy-item">
-    <div class="enemy-item__wrap">
-      <img class="enemy-item__img" :src="enemy.avatar" alt="">
-      <img class="enemy-item__occupation" src="" alt="">
-      <img class="enemy-item__rarity" src="" alt="">
+  <div class="material-item">
+    <div class="material-item__wrap">
+      <img class="material-item__img" :src="material.avatar" alt="">
+      <img class="material-item__occupation" src="" alt="">
+      <img class="material-item__rarity" src="" alt="">
     </div>
-    <div class="enemy-item__name">{{enemy.name}}</div>
+    <div class="material-item__name">{{material.name}}</div>
   </div>
 </template>
 
 <script>
   export default {
-    name:'enemyItem',
+    name:'materialItem',
     props:{
-      enemy:{
+      material:{
         type:Object,
         default(){
           return {}
@@ -24,7 +24,7 @@
 </script>
 
 <style lang='scss' scoped>
-.enemy-item{
+.material-item{
   // width: 120px;
   background-color: rgba($color: #fff, $alpha: .1);
   border: 1px solid #BFBFBF;

@@ -30,61 +30,70 @@ Mock.mock('http://api/swiper',Mock.mock({
 //用户信息
 Mock.mock('http://api/profile',Mock.mock({
   'data':{
-    'id':'@id',
-    'name':'@cname',
-    'frame':"@image('24x24', '#fff', 'ss')",
-    'password':123456,
-    'gender':'@gender',
-    'birthday':'@date("yyyy-MM-dd")',
-    'signature':'@cparagraph',
-    'post':['postID'],
+    'id':'123456',
+    'name':'测试用户1',
+    'avatar':"@image('24x24', '#fff', 'ss')",
+    'password':'123456',
+    'gender':'男',
+    'birthday':2000-01-01,
+    'signature':'个性签名',
+    'post':['postID','2'],
     'reply':['replyID'],
-    'like':'@number'
+    'like':333
   }
 }).data)
 
-
-//头像列表
-Mock.mock('/',Mock.mock({
-  'frameList|5-10':[
+//角色
+Mock.mock('http://api/role',Mock.mock({
+  'data|20-30':[
     {
       'id|+1':1,
-      'frame':'@image'
+      'name':'@name()',
+      'avatar':"@image('180x180', '#fff', '')"
     }
   ]
-}).frameList)
+}).data)
 
-//主题表
-Mock.mock('/',Mock.mock({
-  '':[
-    
+//敌人
+Mock.mock('http://api/enemy',Mock.mock({
+  'data|25-30':[
+    {
+      'id|+1':1,
+      'name':'@name()',
+      'avatar':"@image('180x180', '#fff', '')"
+    }
   ]
 }).data)
 
-//主题回复表
-Mock.mock('/',Mock.mock({
-  '':[
-    
+//素材
+Mock.mock('http://api/material',Mock.mock({
+  'data|20-30':[
+    {
+      'id|+1':1,
+      'name':'@name()',
+      'avatar':"@image('180x180', '#fff', '')"
+    }
   ]
 }).data)
 
-//百科信息表
-Mock.mock('/',Mock.mock({
-  '':[
-    
+//时装
+Mock.mock('http://api/fashion',Mock.mock({
+  'data|20-30':[
+    {
+      'id|+1':1,
+      'name':'@name()',
+      'avatar':"@image('180x180', '#fff', '')"
+    }
   ]
 }).data)
 
-//攻略表
-Mock.mock('/',Mock.mock({
-  '':[
-    
-  ]
-}).data)
-
-//活动资讯表
-Mock.mock('/',Mock.mock({
-  '':[
-    
+//关卡
+Mock.mock('http://api/stage',Mock.mock({
+  'data|20-30':[
+    {
+      'id|+1':1,
+      'name':'@name()',
+      'avatar':"@image('180x180', '#fff', '')"
+    }
   ]
 }).data)

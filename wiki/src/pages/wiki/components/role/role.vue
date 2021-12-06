@@ -25,13 +25,20 @@
       </div>
     </div>
     <div class="role__wrap">
-      <role-item class="role-item" v-for="index in 20" :key="index"></role-item>
+      <role-item
+      class="role-item"
+      v-for="(item,index) in role"
+      :key="index"
+      :role='item'
+      >
+      </role-item>
     </div>
   </div>
 </template>
 
 <script>
 import roleItem from './roleItem'
+import {get} from '@/utils/request'
 
   export default {
     name:'roleMap',
@@ -41,8 +48,19 @@ import roleItem from './roleItem'
     data () {
       return {
         star:2,
-        occupation:['先锋','近卫','狙击','重装','医疗','辅助','术师','特种']
+        occupation:['先锋','近卫','狙击','重装','医疗','辅助','术师','特种'],
+        role:[]
       }
+    },
+    methods: {
+      getRoleData(){
+        get('/role',{}).then(res=>{
+          this.role=res.data
+        })
+      }
+    },
+    created () {
+      this.getRoleData()
     }
   }
 </script>

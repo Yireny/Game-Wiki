@@ -19,8 +19,8 @@
       <div class="navbar__aside">
         <div class="navbar__item">消息</div>
         <div class="navbar__login" :class="{'navbar__login--active': currentID===5}" @click="setPath(navItems[4])">
-          <div class="navbar__frame">
-            <img src="@/assets/images/头像_早露_skin1.png" alt="">
+          <div class="navbar__avatar">
+            <img src="../assets/images/默认头像.png" alt="">
           </div>
         </div>
       </div>
@@ -168,14 +168,16 @@ export default {
       background-color: rgb(46, 206, 255);
     }
   }
-  &__frame{
+  &__avatar{
     width: 36px;
     height: 36px;
+    padding: 2px;
     border-radius: 100%;
+    box-sizing: border-box;
     background-color: #fff;
     & img{
-      width: 100%;
-      height: 100%;
+      width: 32px;
+      height: 32px;
       vertical-align: top;
       border-radius: 100%;
     }
