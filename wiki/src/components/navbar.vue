@@ -135,13 +135,16 @@ export default {
     display: inline-block;
     width: 68px;
     height: 60px;
+    line-height: 20px;
     padding: 20px 0;
     box-sizing: border-box;
     font-size: 14px;
     text-align: center;
     cursor: pointer;
+    vertical-align: middle;
     &--active{
-      font-weight: 600px;
+      font-size: 16px;
+      font-weight: bold;
       background-color: #2ECEFF;
     }
     &:hover{
