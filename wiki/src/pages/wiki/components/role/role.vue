@@ -48,7 +48,7 @@ import {get} from '@/utils/request'
     data () {
       return {
         star:2,
-        occupation:['先锋','近卫','狙击','重装','医疗','辅助','术师','特种'],
+        occupation:['全选','先锋','近卫','狙击','重装','医疗','辅助','术师','特种'],
         role:[]
       }
     },
@@ -75,29 +75,47 @@ import {get} from '@/utils/request'
   &__wrap{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
-    // grid-gap: 5px;
     grid-row-gap: 10px;
     grid-column-gap: 10px;
-    // grid-auto-rows: 150px;
     width: 100%;
     padding-top: 30px;
     box-sizing: border-box;
   }
 
   .occupation{
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
     &__title{
-      font-size: 20px;
+      font-size: 14px;
       margin-right: 40px;
     }
     &__item{
+      display: inline-block;
+      width: 40px;
+      height: 22px;
+      line-height: 22px;
+      text-align: center;
+      font-size: 14px;
+      background-color: rgba($color: #FFFFFF, $alpha: .08);
       border: 1px solid #fff;
+      border-radius: 3px;
       margin-right: 10px;
+      cursor: pointer;
+      &:hover{
+        color: #00c3ff;
+        border-color: #00c3ff;
+      }
+      &--active{
+        color: #FFFFFF !important;
+        background-color: #00c3ff;
+        border-color: #00c3ff;
+      }
     }
   }
   .rarity{
     &__title{
-      font-size: 20px;
+      font-size: 14px;
       margin-right: 20px;
     }
     &__item{

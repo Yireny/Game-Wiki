@@ -63,8 +63,8 @@ import stage from './components/stage/stage'
   &__title{
     width: 100%;
     height: 30px;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: bold;
     margin-bottom: 15px;
     border-bottom: 1px solid #ebebeb;
   }

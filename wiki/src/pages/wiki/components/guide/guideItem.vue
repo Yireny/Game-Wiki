@@ -31,7 +31,7 @@
   box-shadow: 0px 5px 16px rgba(9, 33, 58, 0.08);
   font-size: 15px;
   text-align: center;
-  color: #333;
+  color: #999;
   box-sizing: border-box;
   cursor: pointer;
   transition: transform .3s;
