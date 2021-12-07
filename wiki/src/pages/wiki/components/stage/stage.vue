@@ -27,7 +27,7 @@ import {get} from '@/utils/request'
     },
     methods: {
       getStageData(){
-        get('/stage',{}).then(res=>{
+        get('http://localhost:3000/stage',{}).then(res=>{
           this.stage=res.data
         })
       }

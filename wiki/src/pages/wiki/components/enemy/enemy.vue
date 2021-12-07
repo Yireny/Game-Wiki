@@ -27,7 +27,7 @@ import {get} from '@/utils/request'
     },
     methods: {
       getEnemyData(){
-        get('/enemy',{}).then(res=>{
+        get('http://localhost:3000/enemy',{}).then(res=>{
           this.enemy=res.data
         })
       }

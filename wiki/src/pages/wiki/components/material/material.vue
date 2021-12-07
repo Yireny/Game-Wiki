@@ -27,7 +27,7 @@ import {get} from '@/utils/request'
     },
     methods: {
       getMaterialData(){
-        get('/material',{}).then(res=>{
+        get('http://localhost:3000/material',{}).then(res=>{
           this.material=res.data
         })
       }

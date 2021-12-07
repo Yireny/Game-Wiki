@@ -1,7 +1,7 @@
 const Mock=require('mockjs')
 
 //帖子
-Mock.mock('http://api/post',Mock.mock({
+Mock.mock('http://localhost:3000/post',Mock.mock({
   'data|3-5':[{
       'id':'@id',
       'time':'@date("yyyy-MM-dd")',
@@ -19,7 +19,7 @@ Mock.mock('http://api/post',Mock.mock({
 }).data)
 
 //轮播图
-Mock.mock('http://api/swiper',Mock.mock({
+Mock.mock('http://localhost:3000/swiper',Mock.mock({
   'data|4':[
     "@image('1650x900', '#fff', 'swiper-img')" 
   ]
@@ -28,7 +28,7 @@ Mock.mock('http://api/swiper',Mock.mock({
 
 
 //用户信息
-Mock.mock('http://api/profile',Mock.mock({
+Mock.mock('http://localhost:3000/profile',Mock.mock({
   'data':{
     'id':'123456',
     'name':'测试用户1',
@@ -44,7 +44,7 @@ Mock.mock('http://api/profile',Mock.mock({
 }).data)
 
 //角色
-Mock.mock('http://api/role',Mock.mock({
+Mock.mock('http://localhost:3000/role',Mock.mock({
   'data|20-30':[
     {
       'id|+1':1,
@@ -55,7 +55,7 @@ Mock.mock('http://api/role',Mock.mock({
 }).data)
 
 //敌人
-Mock.mock('http://api/enemy',Mock.mock({
+Mock.mock('http://localhost:3000/enemy',Mock.mock({
   'data|25-30':[
     {
       'id|+1':1,
@@ -66,7 +66,7 @@ Mock.mock('http://api/enemy',Mock.mock({
 }).data)
 
 //素材
-Mock.mock('http://api/material',Mock.mock({
+Mock.mock('http://localhost:3000/material',Mock.mock({
   'data|20-30':[
     {
       'id|+1':1,
@@ -77,7 +77,7 @@ Mock.mock('http://api/material',Mock.mock({
 }).data)
 
 //时装
-Mock.mock('http://api/fashion',Mock.mock({
+Mock.mock('http://localhost:3000/fashion',Mock.mock({
   'data|20-30':[
     {
       'id|+1':1,
@@ -88,7 +88,7 @@ Mock.mock('http://api/fashion',Mock.mock({
 }).data)
 
 //关卡
-Mock.mock('http://api/stage',Mock.mock({
+Mock.mock('http://localhost:3000/stage',Mock.mock({
   'data|20-30':[
     {
       'id|+1':1,

@@ -35,11 +35,14 @@
     },
     methods: {
       getHomeData(){
-        get('/post',{}).then(res=>{
+        get('http://localhost:3000/post',{}).then(res=>{
           this.post=res.data
         })
-        get('/swiper',{}).then(res=>{
+        get('http://localhost:3000/swiper',{}).then(res=>{
           this.slide=res.data
+        })
+        get('http://localhost:3000/users',{}).then(res=>{
+          console.log(res.data)
         })
       }
     },
