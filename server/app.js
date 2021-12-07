@@ -1,3 +1,4 @@
+require('./utils/connectDB')
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -39,7 +40,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(3000,()=>{
-  console.log('11')
+  console.log('服务器启动成功')
 })
 
 module.exports = app;

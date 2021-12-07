@@ -1,5 +1,5 @@
-const DB = require('../utils/connectDB')
-const Schema = DB.Schema
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const userSchema = new Schema({
   name:{
@@ -7,4 +7,4 @@ const userSchema = new Schema({
   }
 })
 
-module.exports = userSchema
+module.exports = mongoose.model('user',userSchema)

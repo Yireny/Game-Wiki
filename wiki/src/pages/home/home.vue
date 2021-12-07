@@ -45,7 +45,7 @@
           console.log('1')
           console.log(res.data)
         }).catch(err=>{
-          console.log('2')
+          console.log('失败')
           console.log(err)
         })
       }

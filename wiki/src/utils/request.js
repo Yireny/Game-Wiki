@@ -2,7 +2,6 @@ import axios from 'axios';
 
 //axios实例
 const service =axios.create({
-  // baseURL:'http://localhost:3000',
   timeout:5000
 })
 
