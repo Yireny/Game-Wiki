@@ -27,7 +27,7 @@ import {get} from '@/utils/request'
     },
     methods: {
       getFashionData(){
-        get('http://localhost:3000/fashion',{}).then(res=>{
+        get('/fashion',{}).then(res=>{
           this.fashion=res.data
         })
       }

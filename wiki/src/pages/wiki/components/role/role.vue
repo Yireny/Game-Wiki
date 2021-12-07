@@ -54,7 +54,7 @@ import {get} from '@/utils/request'
     },
     methods: {
       getRoleData(){
-        get('http://localhost:3000/role',{}).then(res=>{
+        get('/role',{}).then(res=>{
           this.role=res.data
         })
       }
