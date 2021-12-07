@@ -1,7 +1,10 @@
 <template>
   <div class="wiki">
     <div class="wiki__header">
-      <div class="wiki__title">快捷导航</div>
+      <div class="wiki__title">
+        <span class="title__icon iconfont">&#xe611;</span>
+        <span class="title__text">快捷导航</span>
+      </div>
       <guide
       class="wiki__guide"
       @test='test'
@@ -67,6 +70,14 @@ import stage from './components/stage/stage'
     font-weight: bold;
     margin-bottom: 15px;
     border-bottom: 1px solid #ebebeb;
+    .title{
+      &__icon{
+        font-size: 20px;
+        font-weight: normal;
+        vertical-align: -1px;
+        margin-right: 5px;
+      }
+    }
   }
   &__guide{
     margin-bottom: 30px;

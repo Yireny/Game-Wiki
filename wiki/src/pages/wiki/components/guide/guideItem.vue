@@ -1,8 +1,7 @@
 <template>
   <div class="guide-item">
-    <div class="guide-item__bg"></div>
-    <div class="guide-item__icon"></div>
-    <div class="guide-item__text">{{guideItem.text}}</div>
+    <span class="guide-item__icon iconfont">&#xe67e;</span>
+    <span class="guide-item__text">{{guideItem.text}}</span>
   </div>
 </template>
 
@@ -24,7 +23,7 @@
 .guide-item{
   position: relative;
   width: 150px;
-  height: 150px;
+  // height: 150px;
   padding: 10px 0;
   border-radius: 10px;
   background-color:rgba(255, 255, 255, 0.08);
@@ -36,26 +35,6 @@
   cursor: pointer;
   transition: transform .3s;
   font-weight: 600;
-  &__bg{
-    position: absolute;
-    top: 27px;
-    left: 27px;
-    width: 96px;
-    height: 96px;
-    background: url('~@/assets/images/role.png');
-    background-size: 100% 100%;
-    filter: blur(7px);
-  }
-  &__icon{
-    width: 96px;
-    height: 96px;
-    margin: 0 auto;
-    background: url('~@/assets/images/role.png');
-    background-size: 100% 100%;
-  }
-  &__text{
-    display: block;
-  }
   &:hover{
     transform: scale(1.05);
     background-color:rgba(255, 255, 255, 0.2);
