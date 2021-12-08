@@ -30,3 +30,9 @@ export function get(url,params){
     params
   })
 }
+
+export function post(url,params){
+  return service.post(url,{
+    params
+  })
+}

@@ -47,7 +47,9 @@ const routes=[
       isAuthenticated:false
     },
     beforeEnter: (to, from, next) => {
-      if (to.name !== 'login' && !false) next({ name: 'login' })
+      if (to.name !== 'login' && !false) 
+      // next({ path:'/login' })
+      router.push('login')
       else next()
     }
   }

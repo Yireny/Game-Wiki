@@ -5,8 +5,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+//导入接口
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var userRouter = require('./routes/user');
+var testRouter = require('./routes/test');
 
 var app = express();
 
@@ -20,8 +23,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//使用接口
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', userRouter);
+app.use('/test', testRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

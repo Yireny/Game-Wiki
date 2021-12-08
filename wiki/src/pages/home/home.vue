@@ -48,6 +48,9 @@
           console.log('失败')
           console.log(err)
         })
+        get('/test',{}).then(res=>{
+          console.log(res.data)
+        })
       }
     },
     created () {
