@@ -5,7 +5,7 @@ var user = require('../controller/user')
 //获取用户信息
 router.get('/user', user);
 //注册
-router.post('/register',)
+// router.post('/register',register)
 //登录
 // router.post('/login',user.login)
 

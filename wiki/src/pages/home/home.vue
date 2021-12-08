@@ -41,15 +41,10 @@
         get('/swiper',{}).then(res=>{
           this.slide=res.data
         })
-        get('/users',{}).then(res=>{
-          console.log('1')
+        get('/user',{}).then(res=>{
           console.log(res.data)
         }).catch(err=>{
           console.log('失败')
-          console.log(err)
-        })
-        get('/test',{}).then(res=>{
-          console.log(res.data)
         })
       }
     },

@@ -9,7 +9,6 @@ var logger = require('morgan');
 //导入接口
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
-var testRouter = require('./routes/test');
 
 var app = express();
 
@@ -27,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //使用接口
 app.use('/', indexRouter);
 app.use('/', userRouter);
-app.use('/test', testRouter);
+// app.use('/register',userRouter)
 
 
 

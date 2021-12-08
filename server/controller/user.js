@@ -9,11 +9,12 @@ const user = async (req, res) => {
   })
 }
 
-const register = (req,res)=>{
-  let {name,password} = req.body
-  
-  
-}
+// const register = (req,res)=>{
+  // let data={
+  //   name=req.body.name,
+  //   password=req.body.password
+  // }
+// }
 
 
 module.exports = user
