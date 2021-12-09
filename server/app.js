@@ -8,7 +8,7 @@ var logger = require('morgan');
 
 //导入接口
 var indexRouter = require('./routes/index');
-var userRouter = require('./routes/user');
+var userRouter = require('./routes/users');
 
 var app = express();
 
@@ -26,8 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 //使用接口
 app.use('/', indexRouter);
 app.use('/', userRouter);
-// app.use('/register',userRouter)
-
 
 
 // catch 404 and forward to error handler

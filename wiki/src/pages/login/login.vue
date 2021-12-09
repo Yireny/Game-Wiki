@@ -5,29 +5,37 @@
         <div class="wrap__title">欢迎回来</div>
         <input class="wrap__input" type="text" v-model="account.id" placeholder="ID">
         <input class="wrap__input" type="password" v-model="account.password" placeholder="密码">
-        <input class="wrap__btn" type="submit" value="登 录">
+        <div class="wrap__btn">登录</div>
       </form>
       <form class="wrap__interface wrap__register" action="">
         <div class="wrap__title">加入我们</div>
         <input class="wrap__input" type="text" v-model="account.name" placeholder="用户名">
         <input class="wrap__input" type="password" v-model="account.password" placeholder="密码">
         <input class="wrap__input" type="password" v-model="account.confirm" placeholder="确认密码">
-        <input class="wrap__btn" type="submit" value="注 册">
+        <div
+        class="wrap__btn"
+        @click="register"
+        >
+        注册
+        </div>
       </form>
     </div>
     <div class="switch">
       <div class="switch__title">没有/已有账号？</div>
-      <div class="switch__btn" @click="change">切换</div>
+      <div class="switch__btn" @click="rotate">切换</div>
     </div>
   </div>
 </template>
 
 <script>
+import { post } from '@/utils/request'
+
   export default {
     name:'login',
     data() {
       return {
         deg:0,
+        isAllowed:false,
         account:{
           name:'',
           id:'',
@@ -43,7 +51,7 @@
       }
     },
     methods: {
-      change(){
+      rotate(){
         if(this.deg==0){
           this.deg+=180
         }else{
@@ -51,7 +59,11 @@
         }
       },
       register(){
-        
+          if(this.isAllowed){
+            post('/register',{...this.account})
+          }else{
+            console.log('1')
+          }
       }
     },
   }
@@ -106,7 +118,7 @@
     margin-bottom: 20px;
     padding: 0 16px;
     font-size: 18px;
-    color: #c4c3ca;
+    color: #999;
     font-weight: 500;
     outline: none;
     border: none;
@@ -120,15 +132,18 @@
   }
   &__btn{
     background-color: rgba($color: #00c3ff, $alpha: .5);
-    border: none;
     width: 280px;
+    height: 40px;
+    padding: 6px 0;
+    box-sizing: border-box;
     font-size: 24px;
     font-weight: 600;
-    padding: 6px 0;
     color: white;
+    text-align: center;
     border-radius: 8px;
     margin-top: 15px;
     cursor: pointer;
+    user-select: none;
     &:hover{
       background-color: rgba($color: #00c3ff, $alpha: .7);
     }
@@ -163,6 +178,7 @@
     font-size: 20px;
     font-weight: 600;
     color: rgb(255, 255, 255);
+    user-select: none;
     cursor: pointer;
     &:hover{
       background-color: rgba($color: #00c3ff, $alpha: .7);

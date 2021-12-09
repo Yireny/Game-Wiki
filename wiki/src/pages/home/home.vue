@@ -41,10 +41,9 @@
         get('/swiper',{}).then(res=>{
           this.slide=res.data
         })
-        get('/user',{}).then(res=>{
+        get('/users',{}).then(res=>{
+          console.log('1')
           console.log(res.data)
-        }).catch(err=>{
-          console.log('失败')
         })
       }
     },
