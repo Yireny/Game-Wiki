@@ -1,11 +1,11 @@
 <template>
   <div class="fashion-item">
-    <div class="fashion-item__wrap">
-      <img class="fashion-item__img" :src="fashion.avatar" alt="">
-      <img class="fashion-item__occupation" src="" alt="">
-      <img class="fashion-item__rarity" src="" alt="">
+    <img class="fashion-item__img" :src="fashion.avatar" alt="">
+    <div class="fashion-item__content">
+      <div>11111</div>
+      <div>22222</div>
+      <div>33333</div>
     </div>
-    <div class="fashion-item__name">{{fashion.name}}</div>
   </div>
 </template>
 
@@ -25,23 +25,19 @@
 
 <style lang='scss' scoped>
 .fashion-item{
-  // width: 120px;
+  display: flex;
+  height: 120px;
   background-color: rgba($color: #fff, $alpha: .1);
   border: 1px solid #BFBFBF;
   border-radius: 5px;
   box-sizing: border-box;
-  &__wrap{
-    margin: 2px;
-    border: 1px solid rgba($color: #fff, $alpha: .5);
-    border-radius: 5px;
-  }
-  &__img{
-    width: 100%;
+  &__content{
     height: 100%;
   }
-  &__name{
-    width: 100%;
-    text-align: center;
+  &__img{
+    border-radius: 5px;
+    width: auto;
+    height: 100%;
   }
 }
 </style>

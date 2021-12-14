@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store/store'
 
 const home=()=>import('../pages/home/home.vue')
 const wiki=()=>import('../pages/wiki/wiki.vue')
@@ -47,8 +48,7 @@ const routes=[
       isAuthenticated:false
     },
     beforeEnter: (to, from, next) => {
-      if (to.name !== 'login' && !false) 
-      // next({ path:'/login' })
+      if (to.name !== 'login' && !store.getters.isLogin) 
       router.push('login')
       else next()
     }

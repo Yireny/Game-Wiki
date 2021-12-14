@@ -8,7 +8,7 @@
       <div class="navbar__wrap">
         <span
         class="navbar__item"
-        :class="{'navbar__item--active': currentID===item.id}"
+        :class="{'navbar__item--active': navID==item.id}"
         @click="setPath(item)"
         v-for="item in navItems.slice(0,4)"
         :key="item.id"
@@ -18,7 +18,7 @@
       </div>
       <div class="navbar__aside">
         <div class="navbar__item">消息</div>
-        <div class="navbar__login" :class="{'navbar__login--active': currentID===5}" @click="setPath(navItems[4])">
+        <div class="navbar__login" :class="{'navbar__login--active': navID===5}" @click="setPath(navItems[4])">
           <div class="navbar__avatar">
             <img src="../assets/images/默认头像.png" alt="">
           </div>
@@ -33,7 +33,7 @@ export default {
   name: 'navbar',
   data() {
     return {
-      currentID:1,
+      navID:1,
       //导航栏item
       navItems:[
         {
@@ -76,8 +76,8 @@ export default {
           path:item.path
         })
       }
-      if(this.currentID!=item.id){
-        this.currentID=item.id
+      if(this.navID!=item.id){
+        this.navID=item.id
       }
     },
   },

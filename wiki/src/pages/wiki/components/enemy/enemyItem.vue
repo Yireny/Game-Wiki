@@ -1,11 +1,11 @@
 <template>
   <div class="enemy-item">
-    <div class="enemy-item__wrap">
-      <img class="enemy-item__img" :src="enemy.avatar" alt="">
-      <img class="enemy-item__occupation" src="" alt="">
-      <img class="enemy-item__rarity" src="" alt="">
+    <img class="enemy-item__img" :src="enemy.avatar" alt="">
+    <div class="enemy-item____content">
+      <div class="">名称</div>
+      <div class="">属性</div>
+      <div class="">特性</div>
     </div>
-    <div class="enemy-item__name">{{enemy.name}}</div>
   </div>
 </template>
 
@@ -25,23 +25,19 @@
 
 <style lang='scss' scoped>
 .enemy-item{
-  // width: 120px;
+  display: flex;
+  height: 120px;
   background-color: rgba($color: #fff, $alpha: .1);
   border: 1px solid #BFBFBF;
   border-radius: 5px;
   box-sizing: border-box;
-  &__wrap{
-    margin: 2px;
-    border: 1px solid rgba($color: #fff, $alpha: .5);
-    border-radius: 5px;
-  }
-  &__img{
-    width: 100%;
+  &__content{
     height: 100%;
   }
-  &__name{
-    width: 100%;
-    text-align: center;
+  &__img{
+    border-radius: 5px;
+    width: auto;
+    height: 100%;
   }
 }
 </style>

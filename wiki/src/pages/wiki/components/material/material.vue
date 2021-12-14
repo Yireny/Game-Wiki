@@ -41,10 +41,9 @@ import {get} from '@/utils/request'
 <style lang='scss' scoped>
 .material{
   width: 100%;
-  height: 700px;
   &__wrap{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(450px,1fr));
     grid-gap: 10px;
   }
 }
