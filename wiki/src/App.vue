@@ -21,17 +21,20 @@ export default {
     Navbar,
     Statement
   },
-  mounted() {
-    let isLogin = JSON.parse(sessionStorage.getItem('isLogin'))=='true'?true:false
-    let navID = JSON.parse(sessionStorage.getItem('navID'))?JSON.parse(sessionStorage.getItem('navID')):1
-    console.log(isLogin)
-    console.log(navID)
-    // this.$store.mutations.setLogin(this.$store.state,)
-  },
-  beforeDestroy() {
-    sessionStorage.setItem('isLogin',this.$store.getters.isLogin())
-    sessionStorage.setItem('navID',this.$store.getters.navID())
-  },
+  created () {
+    if (sessionStorage.getItem('store')) {
+      this.$store.replaceState(
+        Object.assign(
+          {},
+          this.$store.state,
+          JSON.parse(sessionStorage.getItem('store'))
+        )
+      )
+    }
+    window.addEventListener('beforeunload', () => {
+      sessionStorage.setItem('store', JSON.stringify(this.$store.state))
+    })
+  }
 }
 </script>
 

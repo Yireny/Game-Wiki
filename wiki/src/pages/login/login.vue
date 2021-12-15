@@ -5,7 +5,11 @@
         <div class="wrap__title">欢迎回来</div>
         <input class="wrap__input" type="text" v-model="account.id" placeholder="ID">
         <input class="wrap__input" type="password" v-model="account.password" placeholder="密码">
-        <div class="wrap__btn">登录</div>
+        <div
+        class="wrap__btn"
+        @click="login"
+        >
+        登录</div>
       </form>
       <form class="wrap__interface wrap__register" action="">
         <div class="wrap__title">加入我们</div>
@@ -64,6 +68,10 @@ import { post } from '@/utils/request'
           }else{
             console.log('1')
           }
+      },
+      login(){
+        this.$store.commit('login')
+        this.$router.push('/profile')
       }
     },
   }
