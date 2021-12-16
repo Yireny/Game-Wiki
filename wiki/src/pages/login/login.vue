@@ -71,7 +71,10 @@ import { post } from '@/utils/request'
       },
       login(){
         this.$store.commit('login')
-        this.$router.push('/profile')
+        // this.$router.push('/profile')
+        post('/login',{...this.account}).then(res=>{
+          console.log(res.data.data)
+        })
       }
     },
   }

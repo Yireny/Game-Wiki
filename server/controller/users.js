@@ -19,8 +19,40 @@ const register = (req,res)=>{
   })
 }
 
+const login = async (req,res)=>{
+  const user = await USER.find({
+    id:req.body.params.id
+  })
+  if(!user.length){
+    console.log('该用户不存在')
+    return res.json({
+      status:1002,
+      data:'',
+      mag:'该用户不存在'
+    })
+  }else{
+    if(user[0].id == req.body.params.id && user[0].password == req.body.params.password){
+      console.log('登录成功')
+      return res.json({
+        status:1000,
+        data:user[0],
+        msg:'登录成功'
+      })
+    }else {
+      console.log('账号或密码错误')
+      return res.json({
+        status:1001,
+        data:'',
+        msg:'账号或密码错误'
+      })
+    }
+  }
+  
+}
+
 
 module.exports = {
   users,
-  register
+  register,
+  login
 }
