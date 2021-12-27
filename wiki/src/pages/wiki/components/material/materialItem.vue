@@ -1,10 +1,18 @@
 <template>
   <div class="material-item">
-    <img class="material-item__img" :src="material.avatar" alt="">
-    <div class="material-item__content">
-      <div class="">道具名</div>
-      <div class="">获取方式</div>
-      <div class="">描述。。。。。。。。。。。。。。描述</div>
+    <div class="material__name">{{material.name}}</div>
+    <div class="material__wrap">
+      <img class="material__img" :src="material.img" alt="">
+      <div class="material__content">
+        <div class="material__use">
+          <div class="material__title">用途</div>
+          <div class="material__text">{{material.use}}</div>
+        </div>
+        <div class="material__description">
+          <div class="material__title">描述</div>
+          <div class="material__text">{{material.description}}</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -25,19 +33,27 @@
 
 <style lang='scss' scoped>
 .material-item{
-  display: flex;
-  height: 120px;
+  // height: 150px;
   background-color: rgba($color: #fff, $alpha: .1);
   border: 1px solid #BFBFBF;
   border-radius: 5px;
   box-sizing: border-box;
-  &__content{
-    height: 100%;
-  }
-  &__img{
-    border-radius: 5px;
-    width: auto;
-    height: 100%;
+  .material{
+    &__name{
+      text-align: center;
+      background-color: aqua;
+    }
+    &__wrap{
+      display: flex;
+    }
+    &__img{
+      border-radius: 5px;
+      width: 150px;
+      height: 150px;
+    }
+    &__content{
+      text-align: center;
+    }
   }
 }
 </style>

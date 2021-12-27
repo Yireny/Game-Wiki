@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var user = require('../controller/users')
 
-// var register = require('../controller/users')
 
 //获取用户信息
 router.get('/users', user.users);

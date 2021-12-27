@@ -9,6 +9,11 @@ var logger = require('morgan');
 //导入接口
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/users');
+var roleRouter = require('./routes/roles');
+var enemyRouter = require('./routes/enemys');
+var materialsRouter = require('./routes/materials');
+var fashionRouter = require('./routes/fashions');
+var stageRouter = require('./routes/stages');
 
 var app = express();
 
@@ -26,6 +31,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 //使用接口
 app.use('/', indexRouter);
 app.use('/', userRouter);
+app.use('/', roleRouter)
+app.use('/', enemyRouter)
+app.use('/', materialsRouter)
+app.use('/', fashionRouter)
+app.use('/', stageRouter)
 
 
 // catch 404 and forward to error handler

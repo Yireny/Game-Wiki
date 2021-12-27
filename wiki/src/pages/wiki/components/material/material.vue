@@ -27,8 +27,8 @@ import {get} from '@/utils/request'
     },
     methods: {
       getMaterialData(){
-        get('/material',{}).then(res=>{
-          this.material=res.data
+        get('/materials',{}).then(res=>{
+          this.material=res.data.data
         })
       }
     },

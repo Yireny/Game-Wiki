@@ -27,8 +27,8 @@ import {get} from '@/utils/request'
     },
     methods: {
       getEnemyData(){
-        get('/enemy',{}).then(res=>{
-          this.enemy=res.data
+        get('/enemys',{}).then(res=>{
+          this.enemy=res.data.data
         })
       }
     },

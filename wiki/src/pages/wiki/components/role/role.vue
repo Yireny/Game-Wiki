@@ -54,8 +54,8 @@ import {get} from '@/utils/request'
     },
     methods: {
       getRoleData(){
-        get('/role',{}).then(res=>{
-          this.role=res.data
+        get('/roles',{}).then(res=>{
+          this.role=res.data.data.reverse()
         })
       }
     },

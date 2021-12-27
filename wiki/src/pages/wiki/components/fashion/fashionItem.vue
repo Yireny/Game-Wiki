@@ -1,6 +1,6 @@
 <template>
   <div class="fashion-item">
-    <img class="fashion-item__img" :src="fashion.avatar" alt="">
+    <img class="fashion-item__img" :src="fashion.img" alt="">
     <div class="fashion-item__content">
       <div>11111</div>
       <div>22222</div>

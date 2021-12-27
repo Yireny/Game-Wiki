@@ -1,7 +1,7 @@
 <template>
   <div class="role-item">
     <div class="role-item__wrap">
-      <img class="role-item__img" :src="role.avatar" alt="">
+      <img class="role-item__img" :src="role.avatar[0]" alt="">
       <img class="role-item__occupation" src="" alt="">
       <img class="role-item__rarity" src="" alt="">
     </div>
@@ -19,6 +19,8 @@
           return {}
         }
       }
+    },
+    computed: {
     }
   }
 </script>
@@ -38,6 +40,7 @@
   &__img{
     width: 100%;
     height: 100%;
+    // background-color: #fff;
   }
   &__name{
     width: 100%;

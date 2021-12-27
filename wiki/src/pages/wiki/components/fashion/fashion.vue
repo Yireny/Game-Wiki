@@ -27,8 +27,8 @@ import {get} from '@/utils/request'
     },
     methods: {
       getFashionData(){
-        get('/fashion',{}).then(res=>{
-          this.fashion=res.data
+        get('/fashions',{}).then(res=>{
+          this.fashion=res.data.data
         })
       }
     },
