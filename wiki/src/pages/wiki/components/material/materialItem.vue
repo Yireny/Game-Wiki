@@ -1,25 +1,19 @@
 <template>
-  <div class="material-item">
-    <div class="material__name">{{material.name}}</div>
-    <div class="material__wrap">
-      <img class="material__img" :src="material.img" alt="">
-      <div class="material__content">
-        <div class="material__use">
-          <div class="material__title">用途</div>
-          <div class="material__text">{{material.use}}</div>
-        </div>
-        <div class="material__description">
-          <div class="material__title">描述</div>
-          <div class="material__text">{{material.description}}</div>
-        </div>
-      </div>
+  <div class="material">
+    <div class="material__inner">
+      <img class="material__img" @click="itemClick" :src="material.img" alt="">
     </div>
+    <show-material class="material__de" v-show="isShow" :material=item></show-material>
   </div>
 </template>
 
 <script>
+import showMaterial from './showMaterial'
   export default {
     name:'materialItem',
+    components:{
+      showMaterial
+    },
     props:{
       material:{
         type:Object,
@@ -27,33 +21,34 @@
           return {}
         }
       }
+    },
+    data() {
+      return {
+        item:this.material,
+        isShow:false
+      }
+    },
+    methods: {
+      itemClick(){
+        this.isShow = !this.isShow
+      }
     }
   }
 </script>
 
 <style lang='scss' scoped>
-.material-item{
-  // height: 150px;
-  background-color: rgba($color: #fff, $alpha: .1);
-  border: 1px solid #BFBFBF;
-  border-radius: 5px;
-  box-sizing: border-box;
-  .material{
-    &__name{
-      text-align: center;
-      background-color: aqua;
-    }
-    &__wrap{
-      display: flex;
-    }
-    &__img{
-      border-radius: 5px;
-      width: 150px;
-      height: 150px;
-    }
-    &__content{
-      text-align: center;
-    }
+.material{
+  &__img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    user-select: none;
+  }
+  &__detail{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }
 }
 </style>

@@ -42,8 +42,9 @@ import {get} from '@/utils/request'
 .material{
   width: 100%;
   &__wrap{
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(450px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
     grid-gap: 10px;
   }
 }
