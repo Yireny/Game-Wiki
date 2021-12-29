@@ -33,6 +33,7 @@
   color: #999;
   box-sizing: border-box;
   cursor: pointer;
+  user-select: none;
   transition: transform .3s;
   font-weight: 600;
   &:hover{

@@ -1,5 +1,5 @@
 <template>
-<div class="wrapper">
+<!-- <div class="wrapper"> -->
   <div class="material-detail">
     <div class="material__name" :style="bg_color">{{material.name}}</div>
     <div class="material__wrap">
@@ -16,7 +16,7 @@
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->
 </template>
 
 <script>
@@ -55,14 +55,14 @@
 </script>
 
 <style lang='scss' scoped>
-.wrapper{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba($color: #fff, $alpha: 0);
-}
+// .wrapper{
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   background-color: rgba($color: #fff, $alpha: 0);
+// }
 .material-detail{
   width: 700px;
   // height: 300px;

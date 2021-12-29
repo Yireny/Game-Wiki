@@ -91,6 +91,7 @@ export default {
   color: rgb(253, 255, 255);
   background-color: #00c3ff;
   z-index: 99;
+  user-select: none;
   &__inner{
     position: relative;
     width: 1200px;
@@ -140,6 +141,7 @@ export default {
     font-size: 14px;
     text-align: center;
     cursor: pointer;
+    user-select: none;
     vertical-align: middle;
     &--active{
       font-size: 16px;
