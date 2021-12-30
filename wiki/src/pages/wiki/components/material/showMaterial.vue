@@ -2,6 +2,7 @@
 <!-- <div class="wrapper"> -->
   <div class="material-detail">
     <div class="material__name" :style="bg_color">{{material.name}}</div>
+    <div class="material__icon" @click="closeItem"></div>
     <div class="material__wrap">
       <img class="material__img" :src="material.img" alt="">
       <div class="material__content">
@@ -28,6 +29,11 @@
         default(){
           return {}
         }
+      },
+      itemClick:{
+        type:Function,
+        require:true,
+        default:null
       }
     },
     computed: {
@@ -49,6 +55,9 @@
           case '5':
             return 'background-color: #ffc802'
         }
+      },
+      closeItem(){
+        this.itemClick()
       }
     }
   }
@@ -64,6 +73,7 @@
 //   background-color: rgba($color: #fff, $alpha: 0);
 // }
 .material-detail{
+  position: relative;
   width: 700px;
   // height: 300px;
   background-color: #fff;
@@ -77,6 +87,16 @@
       color: #fff;
       font-weight: bold;
       padding: 5px 0;
+    }
+    &__icon{
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 20px;
+      height: 20px;
+      background: url('~@/assets/images/fork.png') no-repeat;
+      background-size: 100% 100%;
+      cursor: pointer;
     }
     &__wrap{
       display: flex;
