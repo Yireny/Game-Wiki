@@ -27,8 +27,8 @@ import {get} from '@/utils/request'
     },
     methods: {
       getStageData(){
-        get('/stage',{}).then(res=>{
-          this.stage=res.data
+        get('/stages',{}).then(res=>{
+          this.stage=res.data.data
         })
       }
     },
@@ -43,7 +43,7 @@ import {get} from '@/utils/request'
   width: 100%;
   &__wrap{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(450px,1fr));
+    grid-template-columns: repeat(auto-fit,1fr);
     grid-gap: 10px;
   }
 }

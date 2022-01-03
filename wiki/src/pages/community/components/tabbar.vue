@@ -1,9 +1,11 @@
 <template>
   <div class="tabbar">
-    <span class="tabbar__item" :class="{'tabbar__item--active':isActive}">推荐</span>
-    <span class="tabbar__item">热度</span>
-    <span class="tabbar__item">最新</span>
-    <span class="tabbar__item">与我相关</span>
+    <span
+    class="tabbar__item"
+    v-for="(item,index) in tabbar"
+    :class="{'tabbar__item--active':isActive==index}"
+    @click="tabClick(index)"
+    >{{item}}</span>
   </div>
 </template>
 
@@ -12,7 +14,13 @@
     name:'tabbar',
     data () {
       return {
-        isActive:true
+        isActive:0,
+        tabbar:['推荐','热度','最新','与我相关']
+      }
+    },
+    methods: {
+      tabClick(index){
+        this.isActive = index
       }
     },
   }

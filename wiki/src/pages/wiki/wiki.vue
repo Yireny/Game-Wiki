@@ -13,13 +13,13 @@
       </guide>
     </div>
     <div class="wiki__main">
-      <transition name="fade" mode="out-in">
-        <role v-if="wikiIndex===1"></role>
-        <enemy v-if="wikiIndex===2"></enemy>
-        <material v-if="wikiIndex===3"></material>
-        <fashion v-if="wikiIndex===4"></fashion>
-        <stage v-if="wikiIndex===5"></stage>
-        </transition>
+      <!-- <transition name="fade" mode="out-in"> -->
+        <role v-show="wikiIndex===1"></role>
+        <enemy v-show="wikiIndex===2"></enemy>
+        <material v-show="wikiIndex===3"></material>
+        <fashion v-show="wikiIndex===4"></fashion>
+        <stage v-show="wikiIndex===5"></stage>
+        <!-- </transition> -->
     </div>
   </div>
 </template>

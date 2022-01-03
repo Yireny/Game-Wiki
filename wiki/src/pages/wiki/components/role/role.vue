@@ -24,39 +24,58 @@
         <span class="rarity__item">全部</span>
       </div>
     </div>
-    <div class="role__wrap">
+    <div class="role__wrap" v-if="!showRole">
       <role-item
       class="role-item"
       v-for="(item,index) in role"
       :key="index"
       :role='item'
+      @click.native="showDetail(item.id);"
       >
       </role-item>
     </div>
+    <show-role
+    v-else
+    class="role__detail"
+    :hideDetail='showDetail'
+    :role='roleMsg'
+    ></show-role>
   </div>
 </template>
 
 <script>
 import roleItem from './roleItem'
+import showRole from './showRole'
 import {get} from '@/utils/request'
 
   export default {
     name:'roleMap',
     components: {
-      roleItem
+      roleItem,
+      showRole,
     },
     data () {
       return {
-        star:2,
+        showRole:false,
         occupation:['全选','先锋','近卫','狙击','重装','医疗','辅助','术师','特种'],
-        role:[]
+        role:[],
+        roleMsg:{}
       }
+    },
+    computed: {
+      
     },
     methods: {
       getRoleData(){
         get('/roles',{}).then(res=>{
           this.role=res.data.data.reverse()
         })
+      },
+      showDetail(id){
+        this.showRole = !this.showRole
+        if(this.showRole){
+          this.roleMsg = this.role.filter(item => item.id == id)[0]
+        }
       }
     },
     created () {

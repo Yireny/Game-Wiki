@@ -35,15 +35,15 @@
     },
     methods: {
       getHomeData(){
-        get('/post',{}).then(res=>{
-          this.post=res.data
+        get('/posts',{}).then(res=>{
+          this.post=res.data.data
         })
         get('/swiper',{}).then(res=>{
           this.slide=res.data
         })
         get('/users',{}).then(res=>{
-          console.log('1')
-          console.log(res.data)
+          // console.log('1')
+          // console.log(res.data)
         })
       }
     },

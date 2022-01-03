@@ -43,8 +43,8 @@ import {get} from '@/utils/request'
   width: 100%;
   &__wrap{
     display: grid;
-    grid-template-columns: repeat(auto-fit,1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+    grid-gap: 17px;
   }
 }
 </style>

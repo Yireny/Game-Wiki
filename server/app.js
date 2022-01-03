@@ -14,6 +14,7 @@ var enemyRouter = require('./routes/enemys');
 var materialsRouter = require('./routes/materials');
 var fashionRouter = require('./routes/fashions');
 var stageRouter = require('./routes/stages');
+var postRouter = require('./routes/posts')
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/', enemyRouter)
 app.use('/', materialsRouter)
 app.use('/', fashionRouter)
 app.use('/', stageRouter)
+app.use('/',postRouter)
 
 
 // catch 404 and forward to error handler

@@ -7,7 +7,8 @@ let store = new Vuex.Store({
   // 1. state
   state:{
     isLogin:0,
-    navID:1
+    navID:1,
+    user:{}
   },
 
   // 2. getters
@@ -18,6 +19,9 @@ let store = new Vuex.Store({
     },
     navID(state){
       return state.navID
+    },
+    getUser(state){
+      return state.user
     }
   },
 
@@ -40,7 +44,10 @@ let store = new Vuex.Store({
       state.isLogin = Number(state.isLogin) == 0 ? 1 : 0
     },
     changeNav(state,index){
-      state.navID =  index
+      state.navID = index
+    },
+    setUser(state,obj){
+      state.user = obj
     }
   }
 });

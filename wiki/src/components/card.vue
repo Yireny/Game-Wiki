@@ -2,28 +2,26 @@
   <div class="card">
     <div class="card-user">
       <div class="card-user__frame">
-        <img :src="post.frame" alt="">
+        <img :src="post.avatar" alt="">
       </div>
       <div class="card-user__name">{{post.name}}</div>
-      <div class="card-user__push-time">{{post.time}}</div>
+      <div class="card-user__push-time">{{post.date}}</div>
     </div>
     <div class="card-content">
       <div class="card-content__title">{{post.title}}</div>
       <div class="card-content__content">{{post.content}}</div>
-     <div class="card-content__img">
-        <img v-if="post.img1" :src="post.img1" alt="">
-        <img v-if="post.img2" :src="post.img2" alt="">
-        <img v-if="post.img3" :src="post.img3" alt="">
+     <div v-show="post.img.length" class="card-content__img">
+        <img v-if="post.img" :src="post.img1" alt="">
       </div>
     </div>
     <div class="card-browse">
       <div class="card-browse__item">
         <span class="iconfont">&#xe622;</span>
-        <span class="card-browse__text">{{post.views}}</span>
+        <span class="card-browse__text">{{post.view}}</span>
       </div>
       <div class="card-browse__item">
         <span class="iconfont">&#xe600;</span>
-        <span class="card-browse__text">{{post.comments}}</span>
+        <span class="card-browse__text">{{post.reply}}</span>
       </div>
       <div class="card-browse__item">
         <span class="iconfont">&#xec7f;</span>

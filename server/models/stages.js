@@ -3,11 +3,14 @@ const Schema = mongoose.Schema
 
 const stageSchema = new Schema({
   id:{type:String},
-  name:{type:String},
-  description:{type:String},
-  img:{type:String},
-  use:{type:String},
-  grade:{type:String}
+  title:{type:String},
+  chapter:{type:String},
+  cover:{type:String},
+  branch:{type:Array},
+  hard:{type:Array},
+  main:{type:Array},
+  style:{type:Array},
+  training:{type:Array},
 })
 
 module.exports = mongoose.model('stages',stageSchema)

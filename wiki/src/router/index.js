@@ -43,13 +43,16 @@ const routes=[
   },
   {
     path:'/profile',
+    name:'profile',
     component:profile,
     meta:{
       isAuthenticated:false
     },
     beforeEnter: (to, from, next) => {
-      if (to.name !== 'login' && !Number(store.state.isLogin)) 
-      router.push('login')
+      if (!Number(store.getters.isLogin))
+      {
+        router.push('login')
+      }
       else next()
     }
   }

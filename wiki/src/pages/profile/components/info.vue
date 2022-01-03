@@ -1,29 +1,29 @@
 <template>
   <div class="info">
       <div class="info__frame">
-        <img :src="profile.frame" alt="">
+        <img :src="user.avatar" alt="">
       </div>
       <div class="info__detail">
         <div class="info__info">
-          <div class="info__name">{{profile.name}}</div>
-          <div class="info__id">id:{{profile.id}}</div>
+          <div class="info__name">{{user.name}}</div>
+          <div class="info__id">id:{{user.id}}</div>
         </div>
         <div class="info__signature">
-          {{profile.signature}}
+          {{user.sign}}
         </div>
         <div class="info__edit">编辑</div>
       </div>
       <div class="info__interaction">
         <div class="info__item">
-          <div>{{post}}</div>
+          <div>{{user.post.length}}</div>
           <div class="info__item-text">发帖</div>
         </div>
         <div class="info__item">
-          <div>{{reply}}</div>
+          <div>{{user.reply.length}}</div>
           <div class="info__item-text">评论</div>
         </div>
         <div class="info__item">
-          <div>{{profile.like}}</div>
+          <div>{{user.like}}</div>
           <div class="info__item-text">获赞</div>
         </div>
       </div>
@@ -34,11 +34,17 @@
   export default {
     name:'info',
     props:{
-      profile:{
+      userMsg:{
         type:Object,
         default(){
           return {}
         }
+      }
+    },
+    data() {
+      return {
+        // user: this.userMsg
+        user:{}
       }
     },
     computed: {
@@ -52,7 +58,10 @@
           return this.profile.reply.length
         }
       }
-    }
+    },
+    mounted() {
+      this.user = this.$store.getters.getUser
+    },
   }
 </script>
 
