@@ -1,7 +1,7 @@
 <template>
   <div class="home-news">
     <div class="home-news__banner">
-      <img src="../../../assets/images/联合行动05.jpg" alt="">
+      <img :src="news.banner" alt="">
     </div>
     <div class="home-news__information">
       <div class="home-news__title">最新资讯</div>
@@ -15,7 +15,20 @@
 
 <script>
   export default {
-    name:'homeNews'
+    name:'homeNews',
+    props:{
+      newsMsg:{
+        type:Object,
+        default(){
+          return {}
+        }
+      }
+    },
+    data() {
+      return {
+        news:this.newsMsg
+      }
+    },
   }
 </script>
 
@@ -28,7 +41,7 @@
     margin-bottom: 10px;
     overflow: hidden;
     & img{
-      width: 100%;
+      // width: 100%;
       height: 100%;
     }
   }

@@ -24,7 +24,7 @@
         <span class="rarity__item">全部</span>
       </div>
     </div>
-    <div class="role__wrap" v-if="!showRole">
+    <div class="role__wrap" v-show="!showRole">
       <role-item
       class="role-item"
       v-for="(item,index) in role"
@@ -35,7 +35,7 @@
       </role-item>
     </div>
     <show-role
-    v-else
+    v-show="showRole"
     class="role__detail"
     :hideDetail='showDetail'
     :role='roleMsg'

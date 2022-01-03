@@ -2,14 +2,24 @@
   <div class="home">
     <div class="content">
       <div class="content__swiper">
-        <swiper :slide='slide'></swiper>
+        <swiper :slide='info.swiper'></swiper>
       </div>
-      <div class="content__information">
-        <card v-for="item in post" :key="item.id" :post='item'></card>
+      <div class="content__information" v-show="!isShow">
+        <card
+        v-for="item in post"
+        :key="item.id"
+        :post='item'
+        @click.native="showPost(item.id)"
+        ></card>
       </div>
+      <post
+      v-show="isShow"
+      :postDetail='postDetail'
+      :showPost='showPost'
+      ></post>
     </div>
     <div class="aside">
-      <home-news></home-news>
+      <home-news :newsMsg='info'></home-news>
     </div>
   </div>
 </template>
@@ -17,6 +27,7 @@
 <script>
   import swiper from '@/components/swiper'
   import card from '@/components/card'
+  import post from '@/components/post'
   import homeNews from '@/pages/home/components/homeNews'
   import { get } from '@/utils/request'
 
@@ -25,12 +36,16 @@
     components: {
       swiper,
       card,
-      homeNews
+      homeNews,
+      post
     },
     data () {
       return {
         post:[],
-        slide:[]
+        info:{},
+        slide:[],
+        postDetail:{},
+        isShow:false
       }
     },
     methods: {
@@ -38,13 +53,15 @@
         get('/posts',{}).then(res=>{
           this.post=res.data.data
         })
-        get('/swiper',{}).then(res=>{
-          this.slide=res.data
+        get('/info',{}).then(res=>{
+          this.info=res.data.data[0]
         })
-        get('/users',{}).then(res=>{
-          // console.log('1')
-          // console.log(res.data)
-        })
+      },
+      showPost(id){
+        this.isShow = !this.isShow
+        if(this.isShow){
+          this.postDetail = this.post.filter(item=>item.id == id)[0]
+        }
       }
     },
     created () {

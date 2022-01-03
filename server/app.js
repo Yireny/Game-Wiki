@@ -15,6 +15,7 @@ var materialsRouter = require('./routes/materials');
 var fashionRouter = require('./routes/fashions');
 var stageRouter = require('./routes/stages');
 var postRouter = require('./routes/posts')
+var infoRouter = require('./routes/info')
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use('/', materialsRouter)
 app.use('/', fashionRouter)
 app.use('/', stageRouter)
 app.use('/',postRouter)
+app.use('/',infoRouter)
 
 
 // catch 404 and forward to error handler

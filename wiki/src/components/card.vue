@@ -10,8 +10,8 @@
     <div class="card-content">
       <div class="card-content__title">{{post.title}}</div>
       <div class="card-content__content">{{post.content}}</div>
-     <div v-show="post.img.length" class="card-content__img">
-        <img v-if="post.img" :src="post.img1" alt="">
+     <div v-show="post.img" class="card-content__img">
+        <img v-for="(item,index) in post.img" :src="post.img[index]" alt="">
       </div>
     </div>
     <div class="card-browse">
