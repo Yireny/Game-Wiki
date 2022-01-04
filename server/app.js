@@ -15,6 +15,7 @@ var materialsRouter = require('./routes/materials');
 var fashionRouter = require('./routes/fashions');
 var stageRouter = require('./routes/stages');
 var postRouter = require('./routes/posts')
+var replyRouter = require('./routes/reply')
 var infoRouter = require('./routes/info')
 
 var app = express();
@@ -39,6 +40,7 @@ app.use('/', materialsRouter)
 app.use('/', fashionRouter)
 app.use('/', stageRouter)
 app.use('/',postRouter)
+app.use('/',replyRouter)
 app.use('/',infoRouter)
 
 

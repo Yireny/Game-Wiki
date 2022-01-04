@@ -1,13 +1,25 @@
 <template>
   <div class="dynamic">
     <tabbar class="dynamic__tabbar"></tabbar>
-    <card v-for="item in post" :key="item.id" :post='item'></card>
+    <card
+    v-for="item in post"
+    v-show="!isShow"
+    :key="item.id"
+    :post='item'
+    @click.native="showPost(item.id)"
+    ></card>
+    <post
+    v-show="isShow"
+    :postDetail='postDetail'
+    :showPost='showPost'
+    ></post>
   </div>
 </template>
 
 <script>
 import tabbar from './tabbar'
 import card from '@/components/card'
+import post from '@/components/post'
 import { get } from '@/utils/request'
 
   export default {
@@ -15,10 +27,13 @@ import { get } from '@/utils/request'
     components:{
       tabbar,
       card,
+      post
     },
     data() {
       return {
-        post:[]
+        post:[],
+        postDetail:[],
+        isShow:false
       }
     },
     methods: {
@@ -26,6 +41,12 @@ import { get } from '@/utils/request'
         get('/posts',{}).then(res=>{
           this.post = res.data.data
         })
+      },
+      showPost(id){
+        this.isShow = !this.isShow
+        if(this.isShow){
+          this.postDetail = this.post.filter(item=>item.id == id)
+        }
       }
     },
     created () {

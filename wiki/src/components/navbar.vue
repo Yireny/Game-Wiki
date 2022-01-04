@@ -20,7 +20,7 @@
         <div class="navbar__item">消息</div>
         <div class="navbar__login" :class="{'navbar__login--active': $store.state.navID===5}" @click="setPath(navItems[4])">
           <div class="navbar__avatar">
-            <img :src="newAvatar" alt="">
+            <img :src="avatar" alt="">
           </div>
         </div>
       </div>
@@ -34,8 +34,6 @@ export default {
   data() {
     return {
       user:{},
-      avatar:'https://prts.wiki/ak.png?8efd0',
-      newAvatar:'',
       //导航栏item
       navItems:[
         {
@@ -72,12 +70,8 @@ export default {
     }
   },
   computed:{
-    
-  },
-  watch:{
-    avatar(val){
-      console.log(1)
-      this.newAvatar = val
+    avatar(){
+      return this.$store.getters.getUser?this.$store.getters.getUser.avatar:'https://prts.wiki/ak.png?8efd0'
     }
   },
   methods: {
@@ -197,8 +191,8 @@ export default {
     box-sizing: border-box;
     background-color: #fff;
     & img{
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       vertical-align: top;
       border-radius: 100%;
     }

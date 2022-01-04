@@ -44,7 +44,7 @@
         post:[],
         info:{},
         slide:[],
-        postDetail:{},
+        postDetail:[],
         isShow:false
       }
     },
@@ -60,7 +60,7 @@
       showPost(id){
         this.isShow = !this.isShow
         if(this.isShow){
-          this.postDetail = this.post.filter(item=>item.id == id)[0]
+          this.postDetail = this.post.filter(item=>item.id == id)
         }
       }
     },

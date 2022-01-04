@@ -251,7 +251,7 @@
     user-select: none;
     &:hover{
     box-shadow: 5px 5px 10px rgba(9, 33, 58, .8);
-  }
+    }
   }
   &__wrap{
     position: relative;

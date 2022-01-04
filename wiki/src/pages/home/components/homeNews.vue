@@ -26,9 +26,14 @@
     },
     data() {
       return {
-        news:this.newsMsg
+        // news:this.newsMsg
       }
     },
+    computed: {
+      news(){
+        return this.newsMsg
+      }
+    }
   }
 </script>
 
