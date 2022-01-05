@@ -71,7 +71,8 @@ import showMaterial from './showMaterial'
           // this.isShow = true
         }
       })
-      this.position()
+      // this.$nextTick(this.position())
+      setTimeout(this.position(),0)
     },
   }
 </script>

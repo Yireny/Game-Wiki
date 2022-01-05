@@ -1,21 +1,21 @@
 <template>
   <div class="post" v-if="post">
     <div class="post__back" @click="closePost">返回</div>
+    <div class="post__title">{{post[0].title}}</div>
     <div class="post__header">
       <div class="post__user">
         <div class="post__avatar">
           <img :src="post[0].avatar" alt="">
         </div>
         <div class="post__name">{{post[0].name}}</div>
-        <div class="post__date">{{post[0].date}}</div>
       </div>
       <div class="post__main">
-        <div class="post__title">{{post[0].title}}</div>
         <div class="post__content">{{post[0].content}}</div>
         <div v-show="post.img" class="post__img">
             <img v-for="(item,index) in post[0].img" :src="post[0].img[index]" alt="">
           </div>
-        </div>
+      </div>
+        <div class="post__date">{{post[0].date}}</div>
     </div>
     <div class="post__reply">
       <textarea
@@ -27,14 +27,17 @@
       <div class="post__comment" @click="comment">评论</div>
     </div>
     <div class="post__wrap">
-      <reply></reply>
+      <reply
+      v-for="item in postReply"
+      :postReply='item'
+      ></reply>
     </div>
   </div>
 </template>
 
 <script>
 import reply from './reply'
-import { post } from '@/utils/request'
+import { get,post } from '@/utils/request'
 
   export default {
     name:'post',
@@ -60,18 +63,28 @@ import { post } from '@/utils/request'
           postId:'',
           content:'',
           img:[],
-          userId:''
+          userId:'',
+          reply:[]
         }
       }
     },
     computed: {
       post(){
         return this.postDetail
+      },
+      postReply(){
+        return this.reply.filter(item =>item.postId == this.post[0].id)
       }
     },
     methods: {
       closePost(){
         this.showPost()
+      },
+      getReply(){
+        get('/reply',{}).then(res=>{
+          this.reply = res.data.data
+          console.log(this.reply)
+        })
       },
       comment(){
         if(this.$store.getters.isLogin){
@@ -84,6 +97,9 @@ import { post } from '@/utils/request'
         }
       }
     },
+    mounted () {
+      this.getReply()
+    }
   }
 </script>
 

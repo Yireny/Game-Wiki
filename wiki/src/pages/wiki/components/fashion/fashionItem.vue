@@ -73,7 +73,8 @@ import showFashion from './showFashion'
           this.isShow = false
         }
       })
-      this.position()
+      this.$nextTick(this.position())
+      
     },
   }
 </script>
