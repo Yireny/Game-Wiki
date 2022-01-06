@@ -35,12 +35,15 @@
 <style lang='scss' scoped>
 .reply{
   width: 100%;
+  padding-top: 5px;
+  border-top: 1px solid rgba($color: #ccc, $alpha: .3);
   &__user{
     display: flex;
+    align-items: center;
   }
   &__avatar{
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     background-color: #fff;
     border-radius: 100%;
     & img{
@@ -55,6 +58,24 @@
     line-height: 24px;
     font-size: 14px;
     color: #666;
+    padding: 0 15px;
+  }
+  &__date{
+    flex: 1;
+    line-height: 24px;
+    font-size: 14px;
+    color: #ccc;
+    text-align: right;
+  }
+  &__content{
+    width: 100%;
+    font-size: 14px;
+    color: #999;
+    line-height: 18px;
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 </style>

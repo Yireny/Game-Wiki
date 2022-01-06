@@ -23,6 +23,8 @@
         注册
         </div>
       </form>
+      <div class="wrap__tip" v-show="showTip">{{loginTip}}</div>
+      <div class="wrap__tip wrap__tip-back" v-show="showTip">{{loginTip}}</div>
     </div>
     <div class="switch">
       <div class="switch__title">没有/已有账号？</div>
@@ -46,7 +48,9 @@ import { post } from '@/utils/request'
           account:'',
           password:'',
           confirm:''
-        }
+        },
+        loginTip:'',
+        showTip:false
       }
     },
     computed: {
@@ -63,19 +67,55 @@ import { post } from '@/utils/request'
         }
       },
       register(){
-          if(this.isAllowed){
-            post('/register',{...this.account})
+          if(this.account.name && this.account.password && this.account.confirm){
+            if(this.account.password == this.account.confirm){
+              post('/register',{...this.account})
+            }else{
+              this.loginTip = '两次密码不一致'
+              this.showTip = true
+              setTimeout(()=>{
+                this.showTip = false
+              },1500)
+            }
           }else{
-            console.log('1')
+            this.loginTip = '请填写完整信息'
+            this.showTip = true
+            setTimeout(()=>{
+              this.showTip = false
+            },1500)
           }
       },
       login(){
-        this.$store.commit('login')
-        this.$router.push('/profile')
-        post('/login',{...this.account}).then(res=>{
-          // console.log(res.data.data)
-          this.$store.commit('setUser',res.data.data)
-        })
+        if(this.account.id && this.account.password){
+          post('/login',{...this.account}).then(res=>{
+            if(res.data.status == 1002){
+              this.loginTip = res.data.mag
+              this.showTip = true
+              setTimeout(()=>{
+                this.showTip = false
+              },1500)
+            }
+            if(res.data.status == 1001){
+              this.loginTip = res.data.msg
+              this.showTip = true
+              setTimeout(()=>{
+                this.showTip = false
+              },1500)
+            }
+            if(res.data.status == 1000){
+              // alert(res.data.msg)
+              this.$store.commit('login')
+              this.$router.push('/profile')
+              this.$store.commit('setUser',res.data.data)
+            }
+          })
+        }else{
+          this.loginTip = '请输入账号和密码'
+          this.showTip = true
+          setTimeout(()=>{
+            this.showTip = false
+          },1500)
+        }
       }
     },
   }
@@ -158,6 +198,20 @@ import { post } from '@/utils/request'
     user-select: none;
     &:hover{
       background-color: rgba($color: #00c3ff, $alpha: .7);
+    }
+  }
+  &__tip{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateY(0);
+    padding: 10px;
+    font-size: 15px;
+    color: #fff;
+    background-color: rgba($color: #000000, $alpha: .7);
+    border-radius: 5px;
+    &-back{
+      transform: translate(-50%,-50%) rotateY(180deg);
     }
   }
 }

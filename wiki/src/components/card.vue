@@ -94,11 +94,12 @@
   &__title{
     display: flex;
     width: 100%;
-    padding-right: 100px;
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;
     text-overflow: ellipsis;
+    padding-bottom: 5px;
+    // border-bottom: 1px solid rgba($color: #ccc, $alpha: .3);
   }
   &__content{
     width: 100%;
@@ -128,6 +129,8 @@
   height: 24px;
   justify-content: right;
   margin-top: 7px;
+  padding-top: 5px;
+  // border-top: 1px solid rgba($color: #ccc, $alpha: .3);
   &__item{
     width: 75px;
     height: 24px;

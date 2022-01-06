@@ -24,6 +24,7 @@
       v-model="commentMsg.content"
       placeholder="来发表你的观点吧"
       ></textarea>
+      <div class="post__tip" v-show="showTip">请先登录!</div>
       <div class="post__comment" @click="comment">评论</div>
     </div>
     <div class="post__wrap">
@@ -65,7 +66,8 @@ import { get,post } from '@/utils/request'
           img:[],
           userId:'',
           reply:[]
-        }
+        },
+        showTip:false
       }
     },
     computed: {
@@ -93,7 +95,10 @@ import { get,post } from '@/utils/request'
           console.log(this.commentMsg.postId)
           post('/comment',{...this.commentMsg})
         }else{
-          alert('请先登录')
+          this.showTip = true
+          setTimeout(()=>{
+            this.showTip = false
+          },1500)
         }
       }
     },
@@ -118,6 +123,7 @@ import { get,post } from '@/utils/request'
     background-color: rgba($color: #fff, $alpha: .1);
     box-shadow: 2px 2px 5px rgba(9, 33, 58, 0.4);
     border-radius: 5px;
+    cursor: pointer;
     &:hover{
     box-shadow: 2px 2px 10px rgba(9, 33, 58, .8);
     }
@@ -151,6 +157,7 @@ import { get,post } from '@/utils/request'
     line-height: 24px;
     font-size: 14px;
     color: #ccc;
+    text-align: right;
   }
   &__main{
   width: 100%;
@@ -158,7 +165,7 @@ import { get,post } from '@/utils/request'
   &__title{
     display: flex;
     width: 100%;
-    padding-right: 100px;
+    padding: 10px 0;
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;
@@ -169,6 +176,7 @@ import { get,post } from '@/utils/request'
     font-size: 14px;
     color: #999;
     line-height: 18px;
+    padding: 10px 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -186,6 +194,7 @@ import { get,post } from '@/utils/request'
     }
   }
   &__reply{
+    position: relative;
     display: flex;
     align-items: flex-end;
     width: 100%;
@@ -205,9 +214,21 @@ import { get,post } from '@/utils/request'
     resize: none;
     white-space: pre-line;
     word-break: break-all;
+    border: 1px solid rgba($color: #ccc, $alpha: .5);
+    border-radius: 5px;
     &::-webkit-scrollbar{
       display: none;
     }
+  }
+  &__tip{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    padding: 5px;
+    font-size: 13px;
+    color: #ffffff;
+    background-color: rgba($color: #000000, $alpha: .5);
+    border-radius: 5px;
   }
   &__comment{
     width: 70px;
@@ -220,6 +241,7 @@ import { get,post } from '@/utils/request'
     border-radius: 4px;
     text-align: center;
     opacity: .5;
+    cursor: pointer;
   }
 }
 </style>

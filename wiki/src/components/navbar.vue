@@ -71,7 +71,7 @@ export default {
   },
   computed:{
     avatar(){
-      return this.$store.getters.getUser?this.$store.getters.getUser.avatar:'https://prts.wiki/ak.png?8efd0'
+      return this.$store.getters.getUser.avatar?this.$store.getters.getUser.avatar:'https://prts.wiki/ak.png?8efd0'
     }
   },
   methods: {
@@ -87,9 +87,7 @@ export default {
     },
   },
   mounted () {
-    // this.user = this.$store.getters.getUser
-    // this.avatar = this.user.avatar
-    // console.log(this.user)
+    // console.log(this.avatar)
   }
 }
 </script>
