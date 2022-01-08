@@ -7,4 +7,5 @@ router.get('/posts',post.posts)
 
 router.post('/publish',post.publish)
 
+
 module.exports = router;

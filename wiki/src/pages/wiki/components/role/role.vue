@@ -5,8 +5,10 @@
         <span class="occupation__title">职业</span>
         <span
         class="occupation__item"
+        :class="{'occupation__item--active':index==occID}"
         v-for="(item,index) in occupation"
         :key="index"
+        @click="occScreen(item,index)"
         >
           {{item}}
         </span>
@@ -15,19 +17,20 @@
         <span class="rarity__title">稀有度</span>
         <span
         class="rarity__item iconfont"
-        :class="{'rarity__item--active':true}"
-        v-for="index in 6"
+        :class="{'rarity__item--active':index == rarID}"
+        v-for="(item,index) in rarity"
         :key="index"
+        @click="rarScreen(index)"
         >
-        &#xe86a;
+        {{item}}
+        <!-- &#xe86a; -->
         </span>
-        <span class="rarity__item">全部</span>
       </div>
     </div>
     <div class="role__wrap" v-show="!showRole">
       <role-item
       class="role-item"
-      v-for="(item,index) in role"
+      v-for="(item,index) in roleScreen"
       :key="index"
       :role='item'
       @click.native="showDetail(item.id);"
@@ -58,8 +61,12 @@ import {get} from '@/utils/request'
       return {
         showRole:false,
         occupation:['全选','先锋','近卫','狙击','重装','医疗','辅助','术师','特种'],
+        rarity:['全选','⭐1','⭐2','⭐3','⭐4','⭐5','⭐6'],
         role:[],
-        roleMsg:{}
+        roleScreen:[],
+        roleMsg:{},
+        occID:0,
+        rarID:0
       }
     },
     computed: {
@@ -68,7 +75,8 @@ import {get} from '@/utils/request'
     methods: {
       getRoleData(){
         get('/roles',{}).then(res=>{
-          this.role=res.data.data.reverse()
+          this.role=res.data.data
+          this.roleScreen = this.role.reverse()
         })
       },
       showDetail(id){
@@ -76,6 +84,24 @@ import {get} from '@/utils/request'
         if(this.showRole){
           this.roleMsg = this.role.filter(item => item.id == id)[0]
         }
+      },
+      occScreen(occ,index){
+        if(occ=='全选'){
+          this.roleScreen = this.role
+        }else{
+          this.roleScreen = this.role.filter(item=>item.occupation == occ)
+        }
+        this.occID = index
+        this.rarID = 0
+      },
+      rarScreen(index){
+        if(index == 0){
+          this.roleScreen = this.role
+        }else{
+          this.roleScreen = this.role.filter(item =>item.rarity==index)
+        }
+        this.rarID = index
+        this.occID = 0
       }
     },
     created () {
@@ -93,7 +119,7 @@ import {get} from '@/utils/request'
   }
   &__wrap{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+    grid-template-columns: repeat(auto-fit,125px);
     grid-row-gap: 10px;
     grid-column-gap: 10px;
     width: 100%;
@@ -117,7 +143,7 @@ import {get} from '@/utils/request'
       text-align: center;
       font-size: 14px;
       background-color: rgba($color: #FFFFFF, $alpha: .08);
-      border: 1px solid #fff;
+      border: 1px solid #ccc;
       border-radius: 3px;
       margin-right: 10px;
       cursor: pointer;
@@ -135,14 +161,28 @@ import {get} from '@/utils/request'
   .rarity{
     &__title{
       font-size: 14px;
-      margin-right: 20px;
+      margin-right: 25px;
     }
     &__item{
+      display: inline-block;
+      width: 40px;
+      height: 22px;
+      line-height: 22px;
+      text-align: center;
+      font-size: 14px;
+      background-color: rgba($color: #FFFFFF, $alpha: .08);
+      border: 1px solid #ccc;
+      border-radius: 3px;
       margin-right: 10px;
-      color: #999;
       cursor: pointer;
+      &:hover{
+        color: #00c3ff;
+        border-color: #00c3ff;
+      }
       &--active{
-        color: #FEDE04;
+        color: #FFFFFF !important;
+        background-color: #00c3ff;
+        border-color: #00c3ff;
       }
     }
   }

@@ -5,7 +5,7 @@ const postSchema = new Schema({
   id:{type:String},
   title:{type:String},
   theme:{type:String},
-  date:{type:Date},
+  date:{type:String},
   avatar:{type:String},
   name:{type:String},
   content:{type:String},

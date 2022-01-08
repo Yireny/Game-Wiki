@@ -11,15 +11,15 @@
         <div class="info__signature">
           {{user.sign}}
         </div>
-        <div class="info__edit">编辑</div>
+        <div class="info__edit" @click="add">编辑</div>
       </div>
       <div class="info__interaction">
         <div class="info__item">
-          <div>{{user.post.length}}</div>
+          <div></div>
           <div class="info__item-text">发帖</div>
         </div>
         <div class="info__item">
-          <div>{{user.reply.length}}</div>
+          <div></div>
           <div class="info__item-text">评论</div>
         </div>
         <div class="info__item">
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import { post } from '@/utils/request'
+
   export default {
     name:'info',
     props:{
@@ -57,6 +59,13 @@
         if(this.profile.reply){
           return this.profile.reply.length
         }
+      }
+    },
+    methods: {
+      add(){
+        // console.log(1)
+        // post('/addPost',{...this.$store.getters.getUser})
+        // post('/addView',{})
       }
     },
     mounted() {

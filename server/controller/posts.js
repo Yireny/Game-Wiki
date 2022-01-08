@@ -29,7 +29,8 @@ const publish = async(req,res)=>{
   })
 }
 
+
 module.exports = {
   posts,
-  publish
+  publish,
 }

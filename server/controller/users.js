@@ -47,12 +47,10 @@ const login = async (req,res)=>{
       })
     }
   }
-  
 }
-
 
 module.exports = {
   users,
   register,
-  login
+  login,
 }

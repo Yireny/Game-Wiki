@@ -7,7 +7,7 @@ function createDate(){
   var hh = date.getHours()
   var mm = date.getMinutes()
   var ss = date.getSeconds()
-  return year+'-'+month+'-'+day+'-'+' '+hh+':'+mm+':'+ss
+  return year+'-'+month+'-'+day+' '+' '+hh+':'+mm+':'+ss
 }
 
 module.exports = createDate

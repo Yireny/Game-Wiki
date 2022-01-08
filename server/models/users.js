@@ -7,8 +7,8 @@ const userSchema = new Schema({
   password:{type:String},
   avatar:{type:String,default:''},
   sign:{type:String,default:''},
-  post:{type:Array,default:[]},
-  reply:{type:Array,default:[]},
+  post:{type:Number,default:0},
+  reply:{type:Number,default:0},
   like:{type:Number,default:0}
 })
 
