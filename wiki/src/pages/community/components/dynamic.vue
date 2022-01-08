@@ -6,7 +6,7 @@
     v-show="!isShow"
     :key="item.id"
     :post='item'
-    @click.native="showPost(item.id)"
+    @dblclick.native="showPost(item.id)"
     ></card>
     <post
     v-show="isShow"
@@ -40,6 +40,7 @@ import { get } from '@/utils/request'
       getPost(){
         get('/posts',{}).then(res=>{
           this.post = res.data.data
+          console.log(1)
         })
       },
       showPost(id){

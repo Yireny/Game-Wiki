@@ -9,7 +9,7 @@
         v-for="item in post"
         :key="item.id"
         :post='item'
-        @click.native="showPost(item.id)"
+        @dblclick.native="showPost(item.id)"
         ></card>
       </div>
       <post

@@ -59,6 +59,13 @@ import { post } from '@/utils/request'
       }
     },
     methods: {
+      hideTip(str){
+        this.loginTip = str
+        this.showTip = true
+        setTimeout(()=>{
+          this.showTip = false
+        },1500)
+      },
       rotate(){
         if(this.deg==0){
           this.deg+=180
@@ -70,51 +77,35 @@ import { post } from '@/utils/request'
           if(this.account.name && this.account.password && this.account.confirm){
             if(this.account.password == this.account.confirm){
               post('/register',{...this.account})
+              this.hideTip('注册成功')
             }else{
-              this.loginTip = '两次密码不一致'
-              this.showTip = true
-              setTimeout(()=>{
-                this.showTip = false
-              },1500)
+              this.hideTip('两次密码不一致')
             }
           }else{
-            this.loginTip = '请填写完整信息'
-            this.showTip = true
-            setTimeout(()=>{
-              this.showTip = false
-            },1500)
+            this.hideTip('请填写完整信息')
           }
       },
       login(){
         if(this.account.id && this.account.password){
           post('/login',{...this.account}).then(res=>{
             if(res.data.status == 1002){
-              this.loginTip = res.data.mag
-              this.showTip = true
-              setTimeout(()=>{
-                this.showTip = false
-              },1500)
+              this.hideTip(res.data.mag)
             }
             if(res.data.status == 1001){
-              this.loginTip = res.data.msg
-              this.showTip = true
-              setTimeout(()=>{
-                this.showTip = false
-              },1500)
+              this.hideTip(res.data.msg)
             }
             if(res.data.status == 1000){
               // alert(res.data.msg)
               this.$store.commit('login')
-              this.$router.push('/profile')
               this.$store.commit('setUser',res.data.data)
+              this.hideTip('登录成功')
+              setTimeout(()=>{
+                this.$router.push('/profile')
+              },2000)
             }
           })
         }else{
-          this.loginTip = '请输入账号和密码'
-          this.showTip = true
-          setTimeout(()=>{
-            this.showTip = false
-          },1500)
+          this.hideTip('请输入账号和密码')
         }
       }
     },

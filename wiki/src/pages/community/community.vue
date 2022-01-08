@@ -1,8 +1,14 @@
 <template>
   <div class="community">
     <div class="community-main">
-      <publish class="community__publish"></publish>
-      <dynamic class="community__dynamic"></dynamic>
+      <publish
+      class="community__publish"
+      @updPost='updPost'
+      ></publish>
+      <dynamic
+      class="community__dynamic"
+      ref="post"
+      ></dynamic>
     </div>
     <div class="community-aside">
       <topic></topic>
@@ -21,7 +27,12 @@ import topic from './components/topic'
       publish,
       dynamic,
       topic
-    }
+    },
+    methods: {
+      updPost(){
+        this.$refs.post.getPost()
+      }
+    },
   }
 </script>
 

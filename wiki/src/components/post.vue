@@ -24,7 +24,7 @@
       v-model="commentMsg.content"
       placeholder="来发表你的观点吧"
       ></textarea>
-      <div class="post__tip" v-show="showTip">请先登录!</div>
+      <div class="post__tip" v-show="showTip">{{tip}}</div>
       <div class="post__comment" @click="comment">评论</div>
     </div>
     <div class="post__wrap">
@@ -67,7 +67,9 @@ import { get,post } from '@/utils/request'
           userId:'',
           reply:[]
         },
-        showTip:false
+        tip:'',
+        showTip:false,
+        reply:[]
       }
     },
     computed: {
@@ -79,26 +81,35 @@ import { get,post } from '@/utils/request'
       }
     },
     methods: {
+      hideTip(str){
+        this.tip = str
+        this.showTip = true
+        setTimeout(()=>{
+          this.showTip = false
+        },1500)
+      },
       closePost(){
         this.showPost()
       },
       getReply(){
         get('/reply',{}).then(res=>{
           this.reply = res.data.data
-          console.log(this.reply)
         })
       },
       comment(){
         if(this.$store.getters.isLogin){
-          this.commentMsg.userId = this.$store.getters.getUser.id
-          this.commentMsg.postId = this.post[0].id
-          console.log(this.commentMsg.postId)
-          post('/comment',{...this.commentMsg})
+          if(this.commentMsg.content){
+            this.commentMsg.userId = this.$store.getters.getUser.id
+            this.commentMsg.postId = this.post[0].id
+            post('/comment',{...this.commentMsg})
+            this.hideTip('评论成功')
+            this.commentMsg.content = ''
+            this.getReply()
+          }else{
+            this.hideTip('内容不能为空')
+          }
         }else{
-          this.showTip = true
-          setTimeout(()=>{
-            this.showTip = false
-          },1500)
+          this.hideTip('请先登录')
         }
       }
     },
@@ -227,7 +238,7 @@ import { get,post } from '@/utils/request'
     padding: 5px;
     font-size: 13px;
     color: #ffffff;
-    background-color: rgba($color: #000000, $alpha: .5);
+    background-color: rgba($color: #000000, $alpha: .7);
     border-radius: 5px;
   }
   &__comment{

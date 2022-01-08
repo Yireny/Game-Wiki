@@ -13,6 +13,7 @@
     v-model="postMsg.content"
     placeholder="请输入你想发布的内容"
     ></textarea>
+    <div class="publish__tip" v-show="showTip">{{tip}}</div>
     <div class="publish__toolbar">
       <div>
         <span class="publish__tools iconfont">&#xe601;</span>
@@ -41,15 +42,32 @@ import { post } from '@/utils/request'
           img:[],
           id:''
         },
+        tip:'',
+        showTip:false
       }
     },
     methods: {
+      hideTip(str){
+        this.tip = str
+        this.showTip = true
+        setTimeout(()=>{
+          this.showTip = false
+        },1500)
+      },
       publish(){
         if(this.$store.getters.isLogin){
-          this.postMsg.id = this.$store.getters.getUser.id
-          post('/publish',{...this.postMsg})
+          if(this.postMsg.title&&this.postMsg.content){
+            this.postMsg.id = this.$store.getters.getUser.id
+            post('/publish',{...this.postMsg})
+            this.hideTip('发布成功')
+            this.postMsg.content = ''
+            this.postMsg.title = ''
+            this.$emit('updPost')
+          }else{
+            this.hideTip('标题或内容不能为空')
+          }
         }else{
-          alert('请先登录')
+          this.hideTip('请先登录')
         }
       }
     }
@@ -58,6 +76,7 @@ import { post } from '@/utils/request'
 
 <style lang='scss' scoped>
 .publish{
+  position: relative;
   width: 100%;
   padding: 24px;
   border-radius: 5px;
@@ -69,6 +88,16 @@ import { post } from '@/utils/request'
     background-color: transparent;
     outline: none;
     border: none;
+  }
+  &__tip{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 5px 10px;
+    color: #fff;
+    background-color: rgba($color: #000000, $alpha: .7);
+    border-radius: 5px;
   }
  
   &__toolbar{
