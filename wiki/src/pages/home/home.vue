@@ -12,11 +12,11 @@
         @dblclick.native="showPost(item.id)"
         ></card>
       </div>
-      <post
+      <posts
       v-show="isShow"
       :postDetail='postDetail'
       :showPost='showPost'
-      ></post>
+      ></posts>
     </div>
     <div class="aside">
       <home-news :newsMsg='info'></home-news>
@@ -27,9 +27,9 @@
 <script>
   import swiper from '@/components/swiper'
   import card from '@/components/card'
-  import post from '@/components/post'
+  import posts from '@/components/post'
   import homeNews from '@/pages/home/components/homeNews'
-  import { get } from '@/utils/request'
+  import { get,post } from '@/utils/request'
 
   export default {
     name:'home',
@@ -37,7 +37,7 @@
       swiper,
       card,
       homeNews,
-      post
+      posts
     },
     data () {
       return {
@@ -61,6 +61,7 @@
         this.isShow = !this.isShow
         if(this.isShow){
           this.postDetail = this.post.filter(item=>item.id == id)
+          post('/addView',{id:id})
         }
       }
     },

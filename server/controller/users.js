@@ -49,8 +49,41 @@ const login = async (req,res)=>{
   }
 }
 
+const addPost = async(req,res)=>{
+  const user = await USER.find({
+    id:req.body.params.id
+  })
+  USER.update({id: req.body.params.id}, {$set:{post:user[0].post + 1}}, (err, doc) => {
+    if (err) console.log(err);
+    console.log(doc)
+  })
+}
+
+const addReply = async(req,res)=>{
+  const user = await USER.find({
+    id:req.body.params.id
+  })
+  USER.update({id: req.body.params.id}, {$set:{reply:user[0].post + 1}}, (err, doc) => {
+    if (err) console.log(err);
+    console.log(doc)
+  })
+}
+
+const addLike = async(req,res)=>{
+  const user = await USER.find({
+    id:req.body.params.id
+  })
+  USER.update({id: req.body.params.id}, {$set:{like:user[0].post + 1}}, (err, doc) => {
+    if (err) console.log(err);
+    console.log(doc)
+  })
+}
+
 module.exports = {
   users,
   register,
   login,
+  addPost,
+  addReply,
+  addLike
 }

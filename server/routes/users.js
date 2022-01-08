@@ -10,7 +10,9 @@ router.post('/register',user.register)
 //登录
 router.post('/login',user.login)
 
-// router.post('/addPost',user.addPost)
+router.post('/addPost',user.addPost)
+router.post('/addReply',user.addReply)
+router.post('/addLike',user.addLike)
 
 
 module.exports = router;

@@ -1,7 +1,7 @@
 <template>
   <div class="statement">
-    <p>基于Vue框架的游戏攻略网站设计</p>
-    <p><span>118532018054 </span><span> 吴维君</span></p>
+    <div>基于Vue框架的游戏攻略网站设计</div>
+    <div>118532018054 吴维君</div>
   </div>
 </template>
 
@@ -14,9 +14,13 @@
 <style lang='scss' scoped>
 .statement{
   width: 100%;
-  height: 50px;
+  padding: 10px 0;
   text-align: center;
+  color: #999;
   background-color: rgba($color: #FFFFFF, $alpha: .7);
   border-radius: 10px;
+  & div{
+    line-height: 30px;
+  }
 }
 </style>

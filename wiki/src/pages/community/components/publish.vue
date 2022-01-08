@@ -59,6 +59,7 @@ import { post } from '@/utils/request'
           if(this.postMsg.title&&this.postMsg.content){
             this.postMsg.id = this.$store.getters.getUser.id
             post('/publish',{...this.postMsg})
+            post('/addPost',{...this.$store.getters.getUser})
             this.hideTip('发布成功')
             this.postMsg.content = ''
             this.postMsg.title = ''
@@ -83,6 +84,7 @@ import { post } from '@/utils/request'
   box-sizing: border-box;
   background-color: rgba($color: #fff, $alpha: .7);
   &__title{
+    width: 100%;
     height: 24px;
     color: #99a2aa;
     background-color: transparent;

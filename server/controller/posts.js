@@ -29,8 +29,44 @@ const publish = async(req,res)=>{
   })
 }
 
+const addView = async(req,res)=>{
+  const post = await POST.find({
+    id:req.body.params.id
+  })
+  console.log(post[0].view)
+  POST.update({id: req.body.params.id}, {$set:{view:post[0].view + 1}}, (err, doc) => {
+    if (err) console.log(err);
+    console.log(doc)
+  })
+}
+
+const addReply = async(req,res)=>{
+  const post = await POST.find({
+    id:req.body.params.postId
+  })
+  POST.update({id: req.body.params.postId}, {$set:{reply:post[0].reply + 1}}, (err, doc) => {
+    if (err) console.log(err);
+    console.log(doc)
+  })
+}
+
+
+const addLike = async(req,res)=>{
+  const post = await POST.find({
+    id:req.body.params.id
+  })
+  POST.update({id: req.body.params.id}, {$set:{like:post[0].like + 1}}, (err, doc) => {
+    if (err) console.log(err);
+    console.log(doc)
+  })
+}
+
+
 
 module.exports = {
   posts,
   publish,
+  addView,
+  addReply,
+  addLike
 }

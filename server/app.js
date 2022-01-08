@@ -17,6 +17,8 @@ var stageRouter = require('./routes/stages');
 var postRouter = require('./routes/posts')
 var replyRouter = require('./routes/reply')
 var infoRouter = require('./routes/info')
+var avatarRouter = require('./routes/avatars')
+var strRouter = require('./routes/strategys')
 
 var app = express();
 
@@ -42,6 +44,8 @@ app.use('/', stageRouter)
 app.use('/',postRouter)
 app.use('/',replyRouter)
 app.use('/',infoRouter)
+app.use('/',avatarRouter)
+app.use('/',strRouter)
 
 
 // catch 404 and forward to error handler

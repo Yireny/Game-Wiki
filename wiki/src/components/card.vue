@@ -11,7 +11,9 @@
       <div class="card-content__title">{{post.title}}</div>
       <div class="card-content__content">{{post.content}}</div>
      <div v-show="post.img" class="card-content__img">
-        <img v-for="(item,index) in post.img" :src="post.img[index]" alt="">
+        <div class="card-content__img-wrap" v-for="(item,index) in post.img">
+          <img :src="post.img[index]" alt="">
+        </div>
       </div>
     </div>
     <div class="card-browse">
@@ -23,7 +25,10 @@
         <span class="iconfont">&#xe600;</span>
         <span class="card-browse__text">{{post.reply}}</span>
       </div>
-      <div class="card-browse__item">
+      <div
+      class="card-browse__item"
+      :class="{'card-browse__item--active':isLike}"
+      @click="like">
         <span class="iconfont">&#xec7f;</span>
         <span class="card-browse__text">{{post.like}}</span>
       </div>
@@ -32,6 +37,8 @@
 </template>
 
 <script>
+import { post } from '@/utils/request'
+
   export default {
     name:'card',
     props: {
@@ -42,6 +49,20 @@
         }
       }
     },
+    data() {
+      return {
+        isLike:false
+      }
+    },
+    methods: {
+      like(){
+        this.isLike = !this.isLike
+        if(this.isLike){
+          post('/addPostLike',{...this.post})
+          post('/addLike',{...this.$store.getters.getUser})
+        }
+      }
+    }
   }
 </script>
 
@@ -113,9 +134,17 @@
   }
   &__img{
     display: flex;
-    overflow: hidden;
-    & img{
+    height: 120px;
+    &-wrap{
+      position: relative;
       width: 120px;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+    & img{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-40%);
       height: 120px;
       justify-content: center;
       border-radius: 5px;
@@ -136,6 +165,17 @@
     height: 24px;
     .iconfont{
       color: #ccc;
+    }
+    &:nth-child(3){
+      cursor: pointer;
+    }
+    &--active{
+      .iconfont{
+        color: #1890FF;
+      }
+      .card-browse__text{
+        color: #1890FF;
+      }
     }
   }
   &__text{

@@ -25,7 +25,7 @@ import { get } from '@/utils/request'
     data () {
       return {
         user:{},
-        showMsg:true
+        showMsg:false
       }
     },
     methods: {

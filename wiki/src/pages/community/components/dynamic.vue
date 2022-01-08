@@ -40,13 +40,13 @@ import { get } from '@/utils/request'
       getPost(){
         get('/posts',{}).then(res=>{
           this.post = res.data.data
-          console.log(1)
         })
       },
       showPost(id){
         this.isShow = !this.isShow
         if(this.isShow){
           this.postDetail = this.post.filter(item=>item.id == id)
+          post('/addView',{id:id})
         }
       }
     },

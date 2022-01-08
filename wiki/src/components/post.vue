@@ -11,9 +11,11 @@
       </div>
       <div class="post__main">
         <div class="post__content">{{post[0].content}}</div>
-        <div v-show="post.img" class="post__img">
-            <img v-for="(item,index) in post[0].img" :src="post[0].img[index]" alt="">
+        <div v-show="post[0].img" class="post__img">
+          <div class="post__img-wrap" v-for="(item,index) in post[0].img" :key="index">
+            <img :src="post[0].img[index]" alt="">
           </div>
+        </div>
       </div>
         <div class="post__date">{{post[0].date}}</div>
     </div>
@@ -102,6 +104,8 @@ import { get,post } from '@/utils/request'
             this.commentMsg.userId = this.$store.getters.getUser.id
             this.commentMsg.postId = this.post[0].id
             post('/comment',{...this.commentMsg})
+            post('/addReply',{...this.$store.getters.getUser})
+            post('/addPostReply',{...this.commentMsg})
             this.hideTip('评论成功')
             this.commentMsg.content = ''
             this.getReply()
@@ -195,9 +199,18 @@ import { get,post } from '@/utils/request'
   }
   &__img{
     display: flex;
-    overflow: hidden;
-    & img{
+    &-wrap{
+      position: relative;
       width: 120px;
+      height: 120px;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+    & img{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-40%);
+      // width: 120px;
       height: 120px;
       justify-content: center;
       border-radius: 5px;
